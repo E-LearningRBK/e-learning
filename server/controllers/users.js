@@ -99,7 +99,7 @@ const signin = async (req, res) => {
 };
 const getAllUsers = async (req, res) => {
   try {
-    const users = await User.findAll({ where: { role: "student" } });
+    const users = await User.findAll({ where: { role: "user" } }); // cuz the seeded data name the role by 'user' not "student"
     res.status(200).json(users);
   } catch (error) {
     console.error(error);
