@@ -1,0 +1,242 @@
+[
+  {
+    "id": 1,
+    "name": "Introduction to JavaScript",
+    "description": "A comprehensive course covering the basics of JavaScript programming language.",
+    "price": 49.99,
+    "date": "2024-03-29",
+    "link": "https://example.com/intro-to-javascript"
+  },
+  {
+    "id": 2,
+    "name": "Advanced React Development",
+    "description": "Take your React skills to the next level with advanced techniques and best practices.",
+    "price": 79.99,
+    "date": "2024-03-30",
+    "link": "https://example.com/advanced-react"
+  },
+  {
+    "id": 3,
+    "name": "Node.js Mastery",
+    "description": "Master Node.js and build scalable server-side applications with ease.",
+    "price": 69.99,
+    "date": "2024-04-01",
+    "link": "https://example.com/nodejs-mastery"
+  },
+  {
+    "id": 4,
+    "name": "SQL Fundamentals",
+    "description": "Learn the basics of SQL, including querying databases and data manipulation.",
+    "price": 59.99,
+    "date": "2024-04-02",
+    "link": "https://example.com/sql-fundamentals"
+  },
+  {
+    "id": 5,
+    "name": "Web Design Essentials",
+    "description": "Essential skills and principles for designing beautiful and functional websites.",
+    "price": 49.99,
+    "date": "2024-04-03",
+    "link": "https://example.com/web-design-essentials"
+  },
+  {
+    "id": 6,
+    "name": "Python for Data Science",
+    "description": "Learn Python programming language for data analysis and machine learning applications.",
+    "price": 89.99,
+    "date": "2024-04-04",
+    "link": "https://example.com/python-for-data-science"
+  },
+  {
+    "id": 7,
+    "name": "Ethical Hacking",
+    "description": "Master the techniques and tools used by ethical hackers to protect systems and networks.",
+    "price": 99.99,
+    "date": "2024-04-05",
+    "link": "https://example.com/ethical-hacking"
+  },
+  {
+    "id": 8,
+    "name": "Angular Framework Deep Dive",
+    "description": "In-depth exploration of Angular framework, including advanced concepts and best practices.",
+    "price": 79.99,
+    "date": "2024-04-06",
+    "link": "https://example.com/angular-deep-dive"
+  },
+  {
+    "id": 9,
+    "name": "Mobile App Development with Flutter",
+    "description": "Build cross-platform mobile applications using Google's Flutter framework.",
+    "price": 69.99,
+    "date": "2024-04-07",
+    "link": "https://example.com/flutter-mobile-development"
+  },
+  {
+    "id": 10,
+    "name": "Docker Essentials",
+    "description": "Learn the fundamentals of Docker containerization for scalable and efficient deployment.",
+    "price": 59.99,
+    "date": "2024-04-08",
+    "link": "https://example.com/docker-essentials"
+  },
+  {
+    "id": 11,
+    "name": "Cybersecurity Fundamentals",
+    "description": "Understanding basic concepts and principles of cybersecurity for protecting digital assets.",
+    "price": 49.99,
+    "date": "2024-04-09",
+    "link": "https://example.com/cybersecurity-fundamentals"
+  },
+  {
+    "id": 12,
+    "name": "Machine Learning with TensorFlow",
+    "description": "Explore machine learning concepts and build models using Google's TensorFlow library.",
+    "price": 89.99,
+    "date": "2024-04-10",
+    "link": "https://example.com/tensorflow-machine-learning"
+  },
+  {
+    "id": 13,
+    "name": "AWS Cloud Practitioner",
+    "description": "Prepare for the AWS Cloud Practitioner certification exam with this comprehensive course.",
+    "price": 79.99,
+    "date": "2024-04-11",
+    "link": "https://example.com/aws-cloud-practitioner"
+  },
+  {
+    "id": 14,
+    "name": "UI/UX Design Fundamentals",
+    "description": "Essential principles and techniques for creating intuitive and engaging user interfaces.",
+    "price": 59.99,
+    "date": "2024-04-12",
+    "link": "https://example.com/ui-ux-design-fundamentals"
+  },
+  {
+    "id": 15,
+    "name": "Java Programming Basics",
+    "description": "Introduction to Java programming language covering basic syntax and concepts.",
+    "price": 49.99,
+    "date": "2024-04-13",
+    "link": "https://example.com/java-programming-basics"
+  },
+  {
+    "id": 16,
+    "name": "Data Structures and Algorithms",
+    "description": "Fundamental data structures and algorithms for solving complex problems efficiently.",
+    "price": 69.99,
+    "date": "2024-04-14",
+    "link": "https://example.com/data-structures-algorithms"
+  },
+  {
+    "id": 17,
+    "name": "Blockchain Technology Basics",
+    "description": "Understanding the foundational concepts of blockchain technology and cryptocurrencies.",
+    "price": 59.99,
+    "date": "2024-04-15",
+    "link": "https://example.com/blockchain-technology-basics"
+  },
+  {
+    "id": 18,
+    "name": "Vue.js Essentials",
+    "description": "Learn the essentials of Vue.js framework for building modern web applications.",
+    "price": 79.99,
+    "date": "2024-04-16",
+    "link": "https://example.com/vuejs-essentials"
+  },
+  {
+    "id": 19,
+    "name": "Artificial Intelligence Fundamentals",
+    "description": "Introduction to artificial intelligence concepts and applications in various domains.",
+    "price": 89.99,
+    "date": "2024-04-17",
+    "link": "https://example.com/ai-fundamentals"
+  },
+  {
+    "id": 20,
+    "name": "Responsive Web Design",
+    "description": "Learn techniques for creating websites that adapt to different screen sizes and devices.",
+    "price": 49.99,
+    "date": "2024-04-18",
+    "link": "https://example.com/responsive-web-design"
+  },
+  {
+    "id": 21,
+    "name": "Python for Beginners",
+    "description": "A beginner-friendly course to learn Python programming language from scratch.",
+    "price": 49.99,
+    "date": "2024-04-19",
+    "link": "https://example.com/python-for-beginners"
+  },
+  {
+    "id": 22,
+    "name": "Data Science Fundamentals",
+    "description": "Basic concepts and techniques for analyzing and interpreting large datasets.",
+    "price": 69.99,
+    "date": "2024-04-20",
+    "link": "https://example.com/data-science-fundamentals"
+  },
+  {
+    "id": 23,
+    "name": "React Native Development",
+    "description": "Build cross-platform mobile apps using React Native framework.",
+    "price": 79.99,
+    "date": "2024-04-21",
+    "link": "https://example.com/react-native-development"
+  },
+  {
+    "id": 24,
+    "name": "CI/CD Pipelines with Jenkins",
+    "description": "Learn how to set up continuous integration and continuous deployment pipelines using Jenkins.",
+    "price": 59.99,
+    "date": "2024-04-22",
+    "link": "https://example.com/ci-cd-jenkins"
+  },
+  {
+    "id": 25,
+    "name": "Game Development with Unity",
+    "description": "Create games for various platforms using the Unity game development engine.",
+    "price": 89.99,
+    "date": "2024-04-23",
+    "link": "https://example.com/unity-game-development"
+  },
+  {
+    "id": 26,
+    "name": "Software Architecture Principles",
+    "description": "Learn the principles and best practices for designing scalable and maintainable software systems.",
+    "price": 79.99,
+    "date": "2024-04-24",
+    "link": "https://example.com/software-architecture"
+  },
+  {
+    "id": 27,
+    "name": "Introduction to Kotlin",
+    "description": "Get started with Kotlin programming language, a modern alternative to Java for Android development.",
+    "price": 49.99,
+    "date": "2024-04-25",
+    "link": "https://example.com/intro-to-kotlin"
+  },
+  {
+    "id": 28,
+    "name": "Cloud Computing Fundamentals",
+    "description": "Understanding the basics of cloud computing and popular cloud platforms.",
+    "price": 59.99,
+    "date": "2024-04-26",
+    "link": "https://example.com/cloud-computing-fundamentals"
+  },
+  {
+    "id": 29,
+    "name": "JavaScript Frameworks Comparison",
+    "description": "Compare and contrast popular JavaScript frameworks like React, Angular, and Vue.",
+    "price": 49.99,
+    "date": "2024-04-27",
+    "link": "https://example.com/js-frameworks-comparison"
+  },
+  {
+    "id": 30,
+    "name": "Data Visualization with D3.js",
+    "description": "Learn how to create interactive data visualizations using the D3.js library.",
+    "price": 69.99,
+    "date": "2024-04-28",
+    "link": "https://example.com/d3js-data-visualization"
+  }
+]
