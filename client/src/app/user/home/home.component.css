@@ -1,33 +1,76 @@
-/* Styles for search input and button */
+
 .search-input {
-    width: calc(100% - 85px); /* Adjust width accordingly */
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 8px;
-    outline: none;
-}
+    flex: 1; 
+  }
+  
+  .search-button {
+    min-width: 80px; 
+  }
+  
+ 
+  .bg-gray-200 {
+   
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+ 
+  .card {
+   
+    margin-bottom: 2rem;
+  }
+  
+  
+  .card-title {
+    font-size: 1.25rem; 
+    font-weight: bold; 
+  }
+  
+  
+  .card-content {
+    color: #333;
+  }
+  
+  
+  .read-more {
+    color: #007bff; 
+  }
+  
+  .read-more:hover {
+    text-decoration: underline; 
+  }
+  
 
-.search-button {
-    margin-left: 10px; /* Adjust margin accordingly */
-    padding: 8px 16px;
-    background-color: #007bff;
-    color: #fff;
+  /* Styles for left button */
+.left-button {
+    background-color: #4CAF50; 
+    color: white; 
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    outline: none;
-}
-
-.search-button:hover,
-.search-button:focus {
-    background-color: #0056b3;
-}
-
-/* Styles for main content blocks */
-.block {
-    background-color: #f3f4f6;
-    padding: 1rem;
-    border-radius: 0.375rem;
-}
-
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px; 
+    margin-right: 10px; 
+    border-radius: 4px; 
+  }
+  
+  .left-button:hover {
+    background-color: #45a049; 
+  }
+  
+  .right-button {
+    background-color: #f44336; 
+    color: white; 
+    border: none;
+    padding: 10px 24px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px;
+    border-radius: 4px; 
+  }
+  .right-button:hover {
+    background-color: #d32f2f; 
+  }
+  
