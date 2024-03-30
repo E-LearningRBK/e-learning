@@ -1,0 +1,33 @@
+/* Styles for search input and button */
+.search-input {
+    width: calc(100% - 85px); /* Adjust width accordingly */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    outline: none;
+}
+
+.search-button {
+    margin-left: 10px; /* Adjust margin accordingly */
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    outline: none;
+}
+
+.search-button:hover,
+.search-button:focus {
+    background-color: #0056b3;
+}
+
+/* Styles for main content blocks */
+.block {
+    background-color: #f3f4f6;
+    padding: 1rem;
+    border-radius: 0.375rem;
+}
+
