@@ -1,0 +1,25 @@
+.course-details {
+  background-color: #ffffcc;
+  margin: 70px auto 10px;
+  max-width: 1000px;
+  padding: 20px;
+  height: 700px;
+}
+
+.course-headers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 100px;
+}
+
+.course-title {
+  background-color: #e2e2e2;
+  padding: 20px 30px;
+  font-size: 28px;
+}
+
+.course-action {
+  margin-left: auto;
+  background-color: #f0f0f0;
+  padding: 20px 30px;
+}
