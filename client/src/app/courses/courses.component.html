@@ -1,0 +1,17 @@
+
+<app-root></app-root>
+<div class='container'  >
+@for (material of materials; track $index) {
+  <div class="box-mat">
+    <div classe="name">{{ material.name }}</div>
+    <div classe="desc">{{ material.description }}</div>
+    <div classe="price">{{ material.price }}</div>
+    <div classe="date" >{{ material.date }}</div>
+    <div classe="link" >{{ material.link }}</div>
+    <div class="btn-group">
+      <button (click)="materialDetaille(material)" class="btn btn-primary">Consulter</button>
+    
+    </div>
+  </div>
+}
+</div>
