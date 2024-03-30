@@ -17,8 +17,6 @@ export class CourseDetailsComponent implements OnInit {
     this.http
       .get('http://127.0.0.1:3000/api/material/getOne/5')
       .subscribe((data) => {
-        console.log(data);
-        
         this.data = data;
       });
   }
