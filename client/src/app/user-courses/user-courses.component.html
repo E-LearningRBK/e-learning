@@ -1,0 +1,26 @@
+
+<app-root></app-root>
+<div class='container'>
+    <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Date</th>
+            <th>Link</th>
+            <th>leave</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (material of materials; track $index) {
+          <tr>
+            <td>{{ material.name }}</td>
+            <td>{{ material.price }}</td>
+            <td>{{ material.date }}</td>
+            <td><a [href]="material.link">Link To Course</a></td>
+            <td><a [href]="materialDetaille(material)" class="btn">Disenroll</a></td>
+          </tr>
+          }
+        </tbody>
+      </table>
+</div>
