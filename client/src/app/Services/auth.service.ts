@@ -14,4 +14,21 @@ export class AuthService {
       password,
     });
   }
+  singup(
+    firstname: String,
+    lastname: String,
+    email: String,
+    password: String,
+    role: String,
+    imageUrl: String
+  ): Observable<any> {
+    return this.http.post('http://127.0.0.1:3000/api/users/signup', {
+      firstname,
+      lastname,
+      email,
+      password,
+      role,
+      imageUrl,
+    });
+  }
 }
