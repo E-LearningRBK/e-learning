@@ -15,6 +15,7 @@ const isAdminAuthenticated = async (req, res, next) => {
         if (!user || user.role !== 'admin') {
             return res.status(403).json({ error: 'not authorized for this action.' });
         }
+        req.userId = user.id;
         next();
     } catch (error) {
         console.error(error);
