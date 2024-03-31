@@ -37,15 +37,9 @@
   padding: 20px 30px;
 }
 
-.course-action-button {
-  margin-left: auto;
-  background-color: #e2e2e2;
-  padding: 20px 30px;
-}
-
 .course-body {
   margin-left: auto;
-  background-color: #f0f0f0;
+  background-color: #e2e2e2;
   padding: 20px 30px;
   font-size: 18px;
 }
