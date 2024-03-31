@@ -1,6 +1,7 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from '../Services/auth.service';
 import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-login',
@@ -10,27 +11,28 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService) {}
 
   form: any = {
     email: null,
     password: null,
   };
- 
-  // errorMessage: string | null = null;
- 
 
-  onSubmit(): void {
+
+
+  onSubmit():void{
     const { email, password } = this.form;
 
     this.authService.login(email, password).subscribe({
       next: (res) => {
         console.log(res);
-        localStorage.setItem('token', res.token)
-        // this.router.navigate([]);
+        localStorage.setItem('token', res.token);
+        // this.router.navigate(['/app-register']);
+        alert('successfully logged in')
       },
       error: (error) => {
         console.log('User not found.');
+        alert('User not found')
       },
     });
   }
