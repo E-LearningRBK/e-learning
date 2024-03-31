@@ -12,10 +12,14 @@ export class CourseDetailsComponent implements OnInit {
   constructor(private courseDetailsService: CourseDetailsService) {}
 
   data: any = {};
+  enrolled: any = false;
 
   ngOnInit() {
     this.courseDetailsService.getCourse(7).subscribe((response) => {
       this.data = response;
+    });
+    this.courseDetailsService.userEnrolled(5, 7).subscribe((response) => {
+      this.enrolled = response;
     });
   }
 }
