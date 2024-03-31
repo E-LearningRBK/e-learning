@@ -10,9 +10,11 @@
         </div>
         <div class="course-action">
             @if(enrolled){
-            <a target="_blank" [href]="data.link" class="course-action">
-                Go To Lessons
-            </a>
+            <div>
+                <a target="_blank" [href]="data.link" class="course-badge">
+                    Go To Lessons
+                </a>
+            </div>
             }@else {
             <button class="primary-button">
                 Enroll

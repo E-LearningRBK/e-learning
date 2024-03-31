@@ -6,8 +6,6 @@ body {
 }
 
 .primary-button {
-  margin-left: auto;
-  background-color: #e2e2e2;
   padding: 20px 30px;
   cursor: pointer;
   background-color: #99f0c0;
