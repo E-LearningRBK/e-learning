@@ -2,19 +2,10 @@ const bcrypt = require("bcrypt");
 const User = require("../model/user.model.js");
 const jwt = require("jsonwebtoken");
 
-const { upload } = require("../helper/helperFunction.js");
+const { upload,getRandomString } = require("../helper/helperFunction.js");
 const { sendConfirmation } = require("../utils/sendEmail.js");
 
-function getRandomString(length) {
-  const characters =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  let randomString = "";
-  for (let i = 0; i < length; i++) {
-    const randomIndex = Math.floor(Math.random() * characters.length);
-    randomString += characters.charAt(randomIndex);
-  }
-  return randomString;
-}
+
 
 const signup = async (req, res) => {
   const { email, firstName, lastName, password, role,imageUrl } = req.body;
@@ -60,7 +51,6 @@ const signin = async (req, res) => {
     }
     //cheking if the email exist in the database
     const user = await User.findOne({ where: { email:email } });
-    console.log(user);
     if (!user) {
       return res.status(400).json({ error: "User not found." });
     }
@@ -71,9 +61,8 @@ const signin = async (req, res) => {
       return res.status(401).json({ error: "Password is incorrect." });
     }
     if (user.isactive == false) {
-      return res.status(401).json({ error: "avtivate your account?" });
+      return res.status(401).json({ error: "avtivate your account" });
     }
-
     // Generate a JSON Web Token (JWT) for authentication
     const token = jwt.sign(
       {
@@ -85,16 +74,9 @@ const signin = async (req, res) => {
         expiresIn: "1d",
       }
     );
-    let logeduser = {
-      id: user.id,
-      firstName: user.firstName,
-      lastName: user.lastName,
-      imageUrl: user.imageUrl,
-      role: user.role,
-    };
-    res.status(200).json({ logeduser, token, message: "succeeded" });
+   
+    res.status(200).json({token, message: "succeeded" });
   } catch (error) {
-    console.log(logeduser);
     console.error(error);
     res.status(500).send(error);
   }
@@ -110,8 +92,7 @@ const getAllUsers = async (req, res) => {
 };
 const getOne = async (req, res) => {
   try {
-    const { id } = req.params;
-    const user = await User.findOne({ where: { id: id } });
+    const user = await User.findOne({ where: { id: req.userId } });
     res.status(200).send(user);
   } catch (err) {
     res.status(500).send(err);
@@ -119,10 +100,8 @@ const getOne = async (req, res) => {
 };
 const updateUser = async (req, res) => {
   try {
-    const { id } = req.params;
-    const { firstName, lastName, imageUrl, currentPassword, newPassword } =
-      req.body;
-    let user = await User.findByPk(id);
+    const { firstName, lastName, imageUrl, currentPassword, newPassword } =req.body;
+    let user = await User.findByPk(req.userId);
 
     if (!user) {
       return res.status(404).json({ error: "User not found." });
@@ -137,10 +116,7 @@ const updateUser = async (req, res) => {
     const url = await upload(imageBuffer);
     user.imageUrl = url;
     if (currentPassword && newPassword) {
-      const passwordMatch = await bcrypt.compare(
-        currentPassword,
-        user.password
-      );
+      const passwordMatch = await bcrypt.compare( currentPassword,user.password);
       if (!passwordMatch) {
         return res
           .status(401)
