@@ -1,0 +1,60 @@
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+  }
+
+  table {
+    
+    justify-content: center;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.4); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: large;
+  }
+
+  th {
+    background-color: #f1f1f1;
+    font-weight: bold;
+    font-size: x-large;
+
+  }
+
+  tr:last-child td {
+    border-bottom: none; /* Remove border on last row */
+  }
+
+
+  a {
+    color: rgb(30, 161, 193);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: darkblue;
+  }
+
+  .btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #F2C540;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .btn:hover {
+    background-color:red;
+  }
