@@ -40,7 +40,7 @@ module.exports = {
       const material = await Material.findByPk(materialId);
 
       material.addUser(userId);
-      res.status(200).send("User Added");
+      res.status(200).send({ message: "User Added" });
     } catch (err) {
       console.log(err);
       res.status(404).send(err);
