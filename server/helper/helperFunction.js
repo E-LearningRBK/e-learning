@@ -16,5 +16,15 @@ const upload = async (buffer) => {
     });
     return cloudinaryResult.secure_url;
 };
+function getRandomString(length) {
+    const characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let randomString = "";
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * characters.length);
+      randomString += characters.charAt(randomIndex);
+    }
+    return randomString;
+  }
 
-module.exports = { upload };
+module.exports = { upload ,getRandomString};
