@@ -11,8 +11,8 @@ import { CourseDetailsService } from './course-details.service';
 export class CourseDetailsComponent implements OnInit {
   constructor(private courseDetailsService: CourseDetailsService) {}
 
-  data: any = {};
-  enrolled: any = false;
+  data: any;
+  enrolled: any;
 
   ngOnInit() {
     this.courseDetailsService.getCourse(1).subscribe((response) => {

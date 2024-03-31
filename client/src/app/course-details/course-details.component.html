@@ -1,6 +1,7 @@
 <!-- navbar placeholder -->
 <nav style="height: 70px; background-color: #e2e2e2;"></nav>
 
+@defer (when (data && enrolled)) {
 <section class="course-details">
     <div class="course-headers">
         <div>
@@ -9,8 +10,9 @@
             <div class="course-date">{{data.date}}</div>
         </div>
         <div class="course-action">
-            @if(enrolled){
+            @if(enrolled.result){
             <div>
+                <p>Enrooled At {{enrolled.date}}</p>
                 <a target="_blank" [href]="data.link" class="course-badge">
                     Go To Lessons
                 </a>
@@ -31,3 +33,4 @@
     </div>
 
 </section>
+}
