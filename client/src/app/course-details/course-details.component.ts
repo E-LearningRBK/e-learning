@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { CourseDetailsService } from './course-details.service';
 
 @Component({
   selector: 'course-details',
@@ -9,15 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './course-details.component.css',
 })
 export class CourseDetailsComponent implements OnInit {
-  constructor(private http: HttpClient) {}
+  constructor(private courseDetailsService: CourseDetailsService) {}
 
   data: any = {};
 
   ngOnInit() {
-    this.http
-      .get('http://127.0.0.1:3000/api/material/getOne/5')
-      .subscribe((data) => {
-        this.data = data;
-      });
+    this.courseDetailsService.getCourse(7).subscribe((response) => {
+      this.data = response;
+    });
   }
 }
