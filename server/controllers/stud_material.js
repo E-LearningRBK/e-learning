@@ -8,10 +8,10 @@ module.exports = {
       const result = await Material.findAll({
         include: {
           model: User,
-          where: { id: req.params.id },
+          where: { id: req.userId },
           attributes: [],
         },
-      });
+        });
       res.status(200).json(result);
     } catch (err) {
       console.log(err);
@@ -21,16 +21,12 @@ module.exports = {
 
   userIsEnrolled: async (req, res) => {
     try {
-      const { userId, materialId } = req.params;
-
-      const user = await User.findByPk(userId);
-      // const material = await Material.findByPk(materialId);
+      const { materialId } = req.params;
+      const user = await User.findByPk(req.userId);
       const result = await user.getMaterials({
         where: { id: materialId },
         includes: { association: "UserMaterial" },
       });
-      console.log(result, 123);
-      // return;
       if (result[0]) {
         res.send({ result: true, date: result[0].UserMaterial.createdAt });
       } else {
@@ -44,10 +40,10 @@ module.exports = {
 
   addMaterialUser: async (req, res) => {
     try {
-      const { userId, materialId } = req.body;
+      const { materialId } = req.body;
       const material = await Material.findByPk(materialId);
 
-      material.addUser(userId);
+      material.addUser(req.userId);
       res.status(200).send({ message: "User Added" });
     } catch (err) {
       console.log(err);
@@ -56,10 +52,10 @@ module.exports = {
   },
   delMaterialUser: async (req, res) => {
     try {
-      const { userId, materialId } = req.body;
+      const { materialId } = req.body;
       console.log(req.body);
       const delmaterial = await Material.findByPk(materialId);
-      const user = await User.findByPk(userId);
+      const user = await User.findByPk(req.userId);
 
       await user.removeMaterial(delmaterial);
 
