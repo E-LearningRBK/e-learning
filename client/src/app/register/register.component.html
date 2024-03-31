@@ -1,0 +1,43 @@
+<p>register works!</p>
+
+<div class="app-login-form">
+  <h2>Signup Here</h2>
+
+  <form>
+    <div class="form-input">
+      <label>First Name</label>
+      <input
+        type="firstname"
+        placeholder="FirstName"
+        required
+        name="firstname"
+      />
+    </div>
+    <div class="form-input">
+      <label>Last Name</label>
+      <input
+        type="lastname"
+        placeholder="Last Name"
+        required
+        name="lastname"
+        minlength="8"
+      />
+      <label>Email</label>
+      <input type="email" placeholder="Email" name="email" required />
+      <label>Last Name</label>
+      <label>Password</label>
+      <input
+        type="password"
+        placeholder="Password"
+        name="password"
+        required
+        minlength="8"
+      />
+    </div>
+    <button type="submit" class="app-login-btn">Login</button>
+    <p>
+        Already have an account?
+      <button class="app-toggle-btn" type="button">Login Here</button>
+    </p>
+  </form>
+</div>
