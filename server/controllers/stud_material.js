@@ -19,6 +19,21 @@ module.exports = {
     }
   },
 
+  userEnrolled: async (req, res) => {
+    try {
+      const { userId, materialId } = req.params;
+
+      const user = await User.findByPk(userId);
+      const material = await Material.findByPk(materialId);
+      const result = await user.hasMaterial(material);
+      console.log(result);
+      res.send(result);
+    } catch (err) {
+      console.log(err);
+      res.status(404).send(err);
+    }
+  },
+
   addMaterialUser: async (req, res) => {
     try {
       const { userId, materialId } = req.body;
