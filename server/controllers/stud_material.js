@@ -19,15 +19,23 @@ module.exports = {
     }
   },
 
-  userEnrolled: async (req, res) => {
+  userIsEnrolled: async (req, res) => {
     try {
       const { userId, materialId } = req.params;
 
       const user = await User.findByPk(userId);
-      const material = await Material.findByPk(materialId);
-      const result = await user.hasMaterial(material);
-      console.log(result);
-      res.send(result);
+      // const material = await Material.findByPk(materialId);
+      const result = await user.getMaterials({
+        where: { id: materialId },
+        includes: { association: "UserMaterial" },
+      });
+      console.log(result, 123);
+      // return;
+      if (result[0]) {
+        res.send({ result: true, date: result[0].UserMaterial.createdAt });
+      } else {
+        res.send({ result: false });
+      }
     } catch (err) {
       console.log(err);
       res.status(404).send(err);

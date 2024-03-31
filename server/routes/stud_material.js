@@ -5,12 +5,12 @@ const {
   getMaterialsUser,
   addMaterialUser,
   delMaterialUser,
-  userEnrolled,
+  userIsEnrolled,
 } = require("../controllers/stud_material.js");
 
 router.get("/getmaterials/:id", getMaterialsUser);
 
-router.get("/hasmaterial/:userId/:materialId", userEnrolled);
+router.get("/hasmaterial/:userId/:materialId", userIsEnrolled);
 
 router.post("/addmaterialuser", addMaterialUser);
 router.put("/delmaterialuser", delMaterialUser);
