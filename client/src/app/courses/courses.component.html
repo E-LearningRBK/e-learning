@@ -1,17 +1,27 @@
-
 <app-root></app-root>
-<div class='container'  >
-@for (material of materials; track $index) {
+<div class='container'>
+  @for (material of materials; track $index) {
   <div class="box-mat">
-    <div classe="name">{{ material.name }}</div>
-    <div classe="desc">{{ material.description }}</div>
-    <div classe="price">{{ material.price }}</div>
-    <div classe="date" >{{ material.date }}</div>
-    <div classe="link" >{{ material.link }}</div>
+    <div classe="name">
+      <h2> {{ material.name }}</h2>
+    </div>
+    <!-- <div classe="desc">
+      <h4> {{ material.description }}</h4>
+    </div> -->
+    <div classe="price">
+      <h4>{{ material.price }}</h4>
+    </div>
+    <div classe="date">
+      <h4>{{ material.date }}</h4>
+    </div>
+    <div classe="link">
+      <h4> <a [href]=material.link> Link To Course</a></h4>
+    </div>
     <div class="btn-group">
+
       <button (click)="materialDetaille(material)" class="btn btn-primary">Consulter</button>
-    
+
     </div>
   </div>
-}
+  }
 </div>

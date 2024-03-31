@@ -1,51 +1,56 @@
 .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; 
-    align-items: center; 
-    min-height: 100vh; 
-    gap: 30px;
-    margin-top: 20px;
-  }
-  
-  .box-mat {
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: calc(33.33% - 20px);
-    border: #F2C540;
-  }
-  
-  .plan div {
-    margin-bottom: 10px;
-  }
-  
-  .btn-group {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .btn {
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn-primary {
-    background-color: #007bff;
-    color: #fff;
-  }
-  
-  .btn-danger {
-    background-color: #dc3545;
-    color: #fff;
-  }
-  
-  .btn-warning {
-    background-color: #ffc107;
-    color: #212529;
-  }
-  
-  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.box-mat {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: calc(33.33% - 20px);
+  border: #F2C540;
+  font-size: medium;
+}
+.tag {
+  display: inline-block; 
+  margin-right: 5px;
+  background-color: lightgray; 
+  padding: 5px; 
+  border-radius: 15px; 
+}
+
+.plan div {
+  margin-bottom: 10px;
+}
+
+a {
+  color: #212529;
+}
+
+a:hover {
+  color: #4f99e3;
+}
+
+
+
+.btn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #1BC5B4;
+}
