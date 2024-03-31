@@ -18,7 +18,7 @@ export class CourseDetailsComponent implements OnInit {
     this.courseDetailsService.getCourse(7).subscribe((response) => {
       this.data = response;
     });
-    this.courseDetailsService.userEnrolled(5, 7).subscribe((response) => {
+    this.courseDetailsService.userEnrolled(5, 6).subscribe((response) => {
       this.enrolled = response;
     });
   }

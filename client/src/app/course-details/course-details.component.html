@@ -9,9 +9,15 @@
             <div class="course-date">{{data.date}}</div>
         </div>
         <div class="course-action">
+            @if(enrolled){
+            <a target="_blank" [href]="data.link" class="course-action">
+                Go To Lessons
+            </a>
+            }@else {
             <button class="primary-button">
                 Enroll
             </button>
+            }
         </div>
     </div>
 
