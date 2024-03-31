@@ -11,6 +11,13 @@ export class CourseDetailsService {
     return this.http.get(`http://127.0.0.1:3000/api/material/getOne/${id}`);
   }
 
+  enroll(userId: number, materialId: number) {
+    return this.http.post(
+      `http://127.0.0.1:3000/api/student/addmaterialuser`,
+      { userId, materialId }
+    );
+  }
+
   userEnrolled(userId: number, materialId: number) {
     return this.http.get(
       `http://127.0.0.1:3000/api/student/hasmaterial/${userId}/${materialId}`

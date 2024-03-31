@@ -15,11 +15,18 @@ export class CourseDetailsComponent implements OnInit {
   enrolled: any = false;
 
   ngOnInit() {
-    this.courseDetailsService.getCourse(7).subscribe((response) => {
+    this.courseDetailsService.getCourse(1).subscribe((response) => {
       this.data = response;
     });
-    this.courseDetailsService.userEnrolled(5, 6).subscribe((response) => {
+
+    this.courseDetailsService.userEnrolled(22, 1).subscribe((response) => {
       this.enrolled = response;
+    });
+  }
+
+  enroll() {
+    this.courseDetailsService.enroll(22, 1).subscribe((response) => {
+      console.log(response);
     });
   }
 }
