@@ -3,7 +3,6 @@
   margin: 70px auto 10px;
   max-width: 1000px;
   padding: 20px;
-  height: 700px;
 }
 
 .course-headers {
@@ -14,12 +13,39 @@
 
 .course-title {
   background-color: #e2e2e2;
-  padding: 20px 30px;
+  padding: 20px 30px 10px;
   font-size: 28px;
+}
+
+.course-price {
+  background-color: #e2e2e2;
+  padding: 10px 30px;
+  margin: 5px 0;
+  font-size: 22px;
+}
+
+.course-date {
+  background-color: #e2e2e2;
+  padding: 10px 30px;
+  margin: 5px 0;
+  font-size: 22px;
 }
 
 .course-action {
   margin-left: auto;
   background-color: #f0f0f0;
   padding: 20px 30px;
+}
+
+.course-action-button {
+  margin-left: auto;
+  background-color: #e2e2e2;
+  padding: 20px 30px;
+}
+
+.course-body {
+  margin-left: auto;
+  background-color: #f0f0f0;
+  padding: 20px 30px;
+  font-size: 18px;
 }

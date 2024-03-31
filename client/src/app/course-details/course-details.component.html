@@ -3,8 +3,23 @@
 
 <section class="course-details">
     <div class="course-headers">
-        <div class="course-title">{{data.name}}</div>
-        <div class="course-action">Enroll</div>
-
+        <div>
+            <div class="course-title">{{data.name}}</div>
+            <div class="course-price">{{data.price}}TND</div>
+            <div class="course-date">{{data.date}}</div>
+        </div>
+        <div class="course-action">
+            <div class="course-action-button">
+                Enroll
+            </div>
+        </div>
     </div>
+
+    <div class="course-body">
+        {{data.description}}
+        {{data.description}}
+        {{data.description}}
+        {{data.description}}
+    </div>
+
 </section>
