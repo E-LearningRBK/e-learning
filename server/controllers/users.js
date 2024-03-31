@@ -17,7 +17,7 @@ function getRandomString(length) {
 }
 
 const signup = async (req, res) => {
-  const { email, firstName, lastName, password, role } = req.body;
+  const { email, firstName, lastName, password, role,imageUrl } = req.body;
   // This will log a random string of 8 characters
   const randomString = getRandomString(8);
   // getting the data
@@ -30,8 +30,8 @@ const signup = async (req, res) => {
     //hashing the password
     let hashedpass = await bcrypt.hash(password, 10);
     //creating the new user
-    const imageBuffer = req.files[0].buffer;
-    const imageUrl = await upload(imageBuffer);
+    // const imageBuffer = req.files[0].buffer;
+    // const imageUrl = await upload(imageBuffer);
     const user = await User.create({
       firstName: firstName,
       imageUrl: imageUrl,
@@ -59,7 +59,8 @@ const signin = async (req, res) => {
       return res.status(404).json({ error: "Email or Password not found." });
     }
     //cheking if the email exist in the database
-    const user = await User.findOne({ where: { email } });
+    const user = await User.findOne({ where: { email:email } });
+    console.log(user);
     if (!user) {
       return res.status(400).json({ error: "User not found." });
     }
@@ -93,6 +94,7 @@ const signin = async (req, res) => {
     };
     res.status(200).json({ logeduser, token, message: "succeeded" });
   } catch (error) {
+    console.log(logeduser);
     console.error(error);
     res.status(500).send(error);
   }
