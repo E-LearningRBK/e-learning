@@ -6,7 +6,7 @@ import { courses } from './courses/courses.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'course', component: CourseDetailsComponent },
+  { path: 'course/:id', component: CourseDetailsComponent },
   { path: 'my-courses', component: UserCoursesComponent },
   { path: 'all-courses', component: courses },
 ];
