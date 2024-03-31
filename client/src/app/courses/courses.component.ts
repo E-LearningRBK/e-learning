@@ -7,21 +7,19 @@ import { AppComponent } from '../app.component';
   selector: 'app-material-list',
   templateUrl: './courses.component.html',
   styleUrls: ['./courses.component.css'],
-  standalone:true,
-  imports:[AppComponent]
+  standalone: true,
+  imports: [AppComponent]
 })
 export class courses implements OnInit {
 
   materials: Material[] = [];
- 
+
   constructor(private materialService: MaterialService) { }
 
   ngOnInit(): void {
     this.fetchMaterials();
   }
 
-
-  
 
   fetchMaterials(): void {
     this.materialService.getAllMaterials().subscribe(materials => {
@@ -30,10 +28,7 @@ export class courses implements OnInit {
   }
   materialDetaille(material: Material): void {
     console.log('Consulter : ', material);
-   
+
   }
-
-
-
 
 }

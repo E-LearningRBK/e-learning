@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Material } from './courses.model'; // Assuming you have defined the Material interface
+import { Material } from './courses.model';
 
 @Injectable({
   providedIn: 'root',
-  
+
 })
 export class MaterialService {
-  private baseUrl = 'http://127.0.0.1:3000/api/material'; // Update this with your actual API base URL
+  private baseUrl = 'http://127.0.0.1:3000/api/material';
 
   constructor(private http: HttpClient) { }
 
