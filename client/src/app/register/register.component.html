@@ -1,9 +1,7 @@
-<p>register works!</p>
-
 <div class="app-login-form">
   <h2>Signup Here</h2>
 
-  <form>
+  <form (ngSubmit)="onSubmit()">
     <div class="form-input">
       <label>First Name</label>
       <input
@@ -11,6 +9,7 @@
         placeholder="FirstName"
         required
         name="firstname"
+        [(ngModel)]="form.firstName"
       />
     </div>
     <div class="form-input">
@@ -20,24 +19,33 @@
         placeholder="Last Name"
         required
         name="lastname"
-        minlength="8"
+        [(ngModel)]="form.lastName"
       />
       <label>Email</label>
-      <input type="email" placeholder="Email" name="email" required />
-      <label>Last Name</label>
+      <input
+        type="email"
+        placeholder="Email"
+        name="email"
+        required
+        [(ngModel)]="form.email"
+      />
+
       <label>Password</label>
       <input
         type="password"
         placeholder="Password"
         name="password"
         required
+        [(ngModel)]="form.password"
         minlength="8"
       />
     </div>
-    <button type="submit" class="app-login-btn">Login</button>
+    <button type="submit" class="app-login-btn">SignUp</button>
     <p>
-        Already have an account?
-      <button class="app-toggle-btn" type="button">Login Here</button>
+      Already have an account?
+      <button class="app-toggle-btn" type="button">
+        <a href="/login">Login Here</a>
+      </button>
     </p>
   </form>
 </div>
