@@ -24,13 +24,14 @@ module.exports = {
       const { userId, materialId } = req.params;
 
       const user = await User.findByPk(userId);
-      // const material = await Material.findByPk(materialId);
+
+      // Check if user is enrolled in that material
       const result = await user.getMaterials({
         where: { id: materialId },
         includes: { association: "UserMaterial" },
       });
-      console.log(result, 123);
-      // return;
+
+      // conditional response to see if user is enrolled
       if (result[0]) {
         res.send({ result: true, date: result[0].UserMaterial.createdAt });
       } else {
