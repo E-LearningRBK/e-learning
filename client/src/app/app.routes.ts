@@ -6,7 +6,7 @@ import { courses } from './courses/courses.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-
+// import { homeComponent } from './admin/components/admin-home/home.component'
 
 export const routes: Routes = [
   {path : 'home' , component: HomeComponent},
@@ -17,4 +17,5 @@ export const routes: Routes = [
   { path: 'course/:id', component: CourseDetailsComponent },
   { path: 'my-courses', component: UserCoursesComponent },
   { path: 'all-courses', component: courses },
+  // { path: 'adminHome', component: homeComponent  },
 ];
