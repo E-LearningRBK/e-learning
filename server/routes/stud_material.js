@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-
+const isUserAuthenticated = require('../middlewares/isUserAuthenticated');
 const {
   getMaterialsUser,
   addMaterialUser,
@@ -10,8 +10,10 @@ const {
 
 router.get("/getmaterials/:id", getMaterialsUser);
 
-router.get("/hasmaterial/:userId/:materialId", userIsEnrolled);
+router.get("/hasmaterial/:userId/:materialId", isUserAuthenticated, userIsEnrolled);
 
-router.post("/addmaterialuser", addMaterialUser);
-router.put("/delmaterialuser", delMaterialUser);
+router.post("/addmaterialuser", isUserAuthenticated, addMaterialUser);
+
+router.put("/delmaterialuser", isUserAuthenticated, delMaterialUser);
+
 module.exports = router;
