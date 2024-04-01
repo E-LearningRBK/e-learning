@@ -1,0 +1,14 @@
+<!-- still testing for now , i'm gonna work with tables as gadour recommend ;) -->
+<ol>
+    @for(e of users ; track e.id){
+        <li>
+            image : <img src="{{e.imageUrl}}" > <br> 
+            firstName :{{e.firstName}} <br>
+            lastName :{{e.lastName}}  <br>
+            email :{{e.email}} <br>
+            password : {{e.password}}
+            
+        </li>
+
+    }
+</ol>
