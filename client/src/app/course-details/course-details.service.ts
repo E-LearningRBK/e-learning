@@ -20,7 +20,7 @@ export class CourseDetailsService {
 
   userEnrolled(userId: any, materialId: any) {
     return this.http.get(
-      `http://127.0.0.1:3000/api/student/hasmaterial/${userId}/${materialId}`
+      `http://127.0.0.1:3000/api/student/hasmaterial/${materialId}`
     );
   }
 }
