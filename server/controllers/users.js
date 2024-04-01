@@ -101,7 +101,7 @@ const signin = async (req, res) => {
 
 const getAllUsers = async (req, res) => {
   try {
-    const users = await User.findAll({ where: { role: "student" } });
+    const users = await User.findAll({ where: { role: "user" } });
     res.status(200).json(users);
   } catch (error) {
     console.error(error);

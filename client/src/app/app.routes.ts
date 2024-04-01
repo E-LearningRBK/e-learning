@@ -6,10 +6,18 @@ import { courses } from './courses/courses.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-// import { homeComponent } from './admin/components/admin-home/home.component'
+import { homeComponent } from './admin/components/admin-home/home.component'
+import { AllCoursesForAdminComponent } from './admin/components/all-courses-for-admin/all-courses-for-admin.component';
+import { AllUsersForAdminComponent } from './admin/components/all-users-for-admin/all-users-for-admin.component';
+import { CreateCourseComponent } from './admin/components/create-course/create-course.component';
+
 
 export const routes: Routes = [
-  {path : 'home' , component: HomeComponent},
+  {path:'createCourse',component:CreateCourseComponent},
+  {path : 'adminHome', component:homeComponent}, // "homeComponent" for admin
+  {path : 'home' , component: HomeComponent},// "HomeComponent" user for user
+  {path: "AllUsersForAdmin",component : AllUsersForAdminComponent },
+  {path : "AllCoursesForAdmin",component: AllCoursesForAdminComponent },
   {path : 'welcome', component : WelcomeComponent},
   { path: 'login', component: LoginComponent },
   { path: 'register', component:RegisterComponent },
@@ -17,5 +25,5 @@ export const routes: Routes = [
   { path: 'course/:id', component: CourseDetailsComponent },
   { path: 'my-courses', component: UserCoursesComponent },
   { path: 'all-courses', component: courses },
-  // { path: 'adminHome', component: homeComponent  },
+ 
 ];
