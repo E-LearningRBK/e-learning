@@ -12,7 +12,7 @@ const isUserAuthenticated = async (req, res, next) => {
       token,
       process.env.jwt_Secret,
       function (err, decoded) {
-        req.userId = decoded.userId
+        req.userId = decoded.userId;
       }
     );
     next();
