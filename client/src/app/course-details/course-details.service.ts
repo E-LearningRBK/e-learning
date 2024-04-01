@@ -7,18 +7,18 @@ import { Injectable } from '@angular/core';
 export class CourseDetailsService {
   constructor(private http: HttpClient) {}
 
-  getCourse(id: number) {
+  getCourse(id: any) {
     return this.http.get(`http://127.0.0.1:3000/api/material/getOne/${id}`);
   }
 
-  enroll(userId: number, materialId: number) {
-    return this.http.post(
-      `http://127.0.0.1:3000/api/student/addmaterialuser`,
-      { userId, materialId }
-    );
+  enroll(userId: any, materialId: any) {
+    return this.http.post(`http://127.0.0.1:3000/api/student/addmaterialuser`, {
+      userId,
+      materialId,
+    });
   }
 
-  userEnrolled(userId: number, materialId: number) {
+  userEnrolled(userId: any, materialId: any) {
     return this.http.get(
       `http://127.0.0.1:3000/api/student/hasmaterial/${userId}/${materialId}`
     );
