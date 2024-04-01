@@ -12,15 +12,14 @@ export class CourseDetailsService {
   }
 
   enroll(userId: any, materialId: any) {
-    return this.http.post(`http://127.0.0.1:3000/api/student/addmaterialuser`, {
-      userId,
-      materialId,
-    });
+    return this.http.get(
+      `http://127.0.0.1:3000/api/student/addmaterialuser/${materialId}`
+    );
   }
 
   userEnrolled(userId: any, materialId: any) {
     return this.http.get(
-      `http://127.0.0.1:3000/api/student/hasmaterial/${userId}/${materialId}`
+      `http://127.0.0.1:3000/api/student/hasmaterial/${materialId}`
     );
   }
 }

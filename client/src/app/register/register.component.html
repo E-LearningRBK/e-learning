@@ -2,6 +2,22 @@
   <h2>Signup Here</h2>
 
   <form (ngSubmit)="onSubmit()">
+    <div class="img-input">
+      <input
+        type="file"
+        accept="image/*"
+        (change)="onFileSelected($event)"
+        #fileInput
+        style="display: none"
+      />
+
+      <img
+        [src]="image"
+        alt="Click to Upload"
+        (click)="fileInput.click()"
+        style="cursor: pointer"
+      />
+    </div>
     <div class="form-input">
       <label>First Name</label>
       <input

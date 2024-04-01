@@ -24,7 +24,6 @@ module.exports = {
       const { materialId } = req.params;
       const user = await User.findByPk(req.userId);
       // Check if user is enrolled in that material
-
       const result = await user.getMaterials({
         where: { id: materialId },
         includes: { association: "UserMaterial" },
