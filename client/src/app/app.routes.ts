@@ -9,8 +9,11 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { homeComponent } from './admin/components/admin-home/home.component'
 import { AllCoursesForAdminComponent } from './admin/components/all-courses-for-admin/all-courses-for-admin.component';
 import { AllUsersForAdminComponent } from './admin/components/all-users-for-admin/all-users-for-admin.component';
+import { CreateCourseComponent } from './admin/components/create-course/create-course.component';
+
 
 export const routes: Routes = [
+  {path:'createCourse',component:CreateCourseComponent},
   {path : 'adminHome', component:homeComponent}, // "homeComponent" for admin
   {path : 'home' , component: HomeComponent},// "HomeComponent" user for user
   {path: "AllUsersForAdmin",component : AllUsersForAdminComponent },
