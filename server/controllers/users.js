@@ -8,10 +8,12 @@ const { sendConfirmation } = require("../utils/sendEmail.js");
 
 
 const signup = async (req, res) => {
-  const { email, firstName, lastName, password, role,imageUrl } = req.body;
+  const { email, firstName, lastName, password, role, imageUrl } = req.body;
+
   // This will log a random string of 8 characters
   const randomString = getRandomString(8);
   // getting the data
+
   try {
     //checking if the email is already in use
     const checkemail = await User.findOne({ where: { email: email } });
@@ -25,16 +27,16 @@ const signup = async (req, res) => {
     // const imageUrl = await upload(imageBuffer);
     const user = await User.create({
       firstName: firstName,
-      imageUrl: imageUrl,
+      imageUrl: "",
       lastName: lastName,
       email: email,
       password: hashedpass,
-      role: role,
+      role: "student",
       isactive: "false",
       activationcode: randomString,
     });
 
-    await sendConfirmation(firstName, email, randomString, password);
+    // await sendConfirmation(firstName, email, randomString, password);
 
     res.status(201).send(user);
   } catch (error) {
@@ -51,6 +53,7 @@ const signin = async (req, res) => {
     }
     //cheking if the email exist in the database
     const user = await User.findOne({ where: { email:email } });
+
     if (!user) {
       return res.status(400).json({ error: "User not found." });
     }

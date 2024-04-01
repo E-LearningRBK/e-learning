@@ -1,29 +1,30 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../Services/auth.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
 })
 export class RegisterComponent {
   form: any = {
-    firstname: String,
-    lastname: String,
-    email: String,
-    password: String,
-    role: String,
-    imageUrl: String,
+    firstName: null,
+    lastName: null,
+    email: null,
+    password: null,
+    // imageUrl: null,
   };
+
   constructor(private authService: AuthService) {}
 
-  onSubmit(): void {
-    const { firstname, lastname, email, password, role, imageUrl } = this.form;
+  onSubmit() {
+    const { firstName, lastName, email, password, imageUrl } = this.form;
 
     this.authService
-      .singup(firstname, lastname, email, password, role, imageUrl)
+      .singup(firstName, lastName, email, password, imageUrl)
       .subscribe({
         next: (data) => {
           console.log(data);
