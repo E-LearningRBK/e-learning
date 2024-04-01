@@ -2,17 +2,21 @@ import { Component } from '@angular/core';
 import { AuthService } from '../Services/auth.service';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,MatIconModule,MatButtonModule,MatFormFieldModule,MatInputModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
   constructor(private authService: AuthService,private router:Router) {}
-
+  hide = true;
   form: any = {
     email: null,
     password: null,
