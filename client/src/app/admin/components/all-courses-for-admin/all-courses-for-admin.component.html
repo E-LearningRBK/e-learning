@@ -1,15 +1,23 @@
-<ol>
-    @for(e of materials ; track e.id){
-
-        <li>
-            
-            name :{{e.name}} <br>
-            description :{{e.description}}  <br>
-            price :{{e.price}} <br>
-            date : {{e.date}} <br>
-            link : {{e.link}} 
-
-            
-        </li>
-    }
-</ol>
+<table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Date</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(e of materials ; track e.id){
+        <tr>
+          <td>{{e.name}}</td>
+          <td>{{e.description}}</td>
+          <td>{{e.price}}</td>
+          <td>{{e.date}}</td>
+          <td><a href="{{e.link}}">{{e.link}}</a></td>
+        </tr>
+      }
+    </tbody>
+  </table>
+  
