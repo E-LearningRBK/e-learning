@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseDetailsService } from './course-details.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'course-details',
@@ -9,24 +10,38 @@ import { CourseDetailsService } from './course-details.service';
   styleUrl: './course-details.component.css',
 })
 export class CourseDetailsComponent implements OnInit {
-  constructor(private courseDetailsService: CourseDetailsService) {}
+  materialId: any;
+  constructor(
+    private courseDetailsService: CourseDetailsService,
+    private route: ActivatedRoute
+  ) {}
 
   data: any;
   enrolled: any;
 
   ngOnInit() {
-    this.courseDetailsService.getCourse(1).subscribe((response) => {
-      this.data = response;
-    });
+    this.route.paramMap.subscribe((p) => {
+      this.materialId = p.get('id');
+      this.courseDetailsService
+        .getCourse(this.materialId)
+        .subscribe((response) => {
+          this.data = response;
+        });
 
-    this.courseDetailsService.userEnrolled(22, 1).subscribe((response) => {
-      this.enrolled = response;
+      this.courseDetailsService
+        .userEnrolled(22, this.materialId)
+        .subscribe((response) => {
+          this.enrolled = response;
+        });
     });
   }
 
   enroll() {
-    this.courseDetailsService.enroll(22, 1).subscribe((response) => {
-      console.log(response);
-    });
+    this.courseDetailsService
+      .enroll(22, this.materialId)
+      .subscribe((response) => {
+        console.log(response);
+        window.location.reload();
+      });
   }
 }
