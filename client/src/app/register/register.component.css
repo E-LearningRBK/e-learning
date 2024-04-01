@@ -1,6 +1,6 @@
 .app-login-form{
     width: 550px;
-    height: 390px;
+    height: 600px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 30px 30px;
     border-radius: 10px;
@@ -30,4 +30,10 @@
     background-color: transparent;
     color: #0e0ede;
     cursor: pointer;
+}
+img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
 }
