@@ -12,7 +12,7 @@ router.get('/confirm/:activationcode', verifyUser);
 router.post('/signup',signup)
 router.post('/signin',signin)
 //admin
-router.get('/getAll',isAdminAuthenticated,getAllUsers)
+router.get('/getAll'/*isAdminAuthenticated*/,getAllUsers)
 //user
 router.put('/update/:id',isUserAuthenticated, updateUser)
 router.get("/getOne/:id",isUserAuthenticated,getOne)
