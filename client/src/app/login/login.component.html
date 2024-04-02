@@ -3,46 +3,30 @@
 
   <form (ngSubmit)="onSubmit()">
     <div class="form-input">
-      <mat-form-field>
-        <mat-label>Email Address</mat-label>
-        <input
-          matInput
-          type="email"
-          placeholder="pat@example.com"
-          required
-          [(ngModel)]="form.email"
-          name="email"
-        />
-      </mat-form-field>
+      <label>Email Address</label>
+      <input
+        type="email"
+        placeholder="Email address"
+        required
+        [(ngModel)]="form.email"
+        name="email"
+      />
     </div>
     <div class="form-input">
-      <mat-form-field>
-        <mat-label>Password</mat-label>
-        <input
-          matInput
-          type="{{ hide ? 'password' : 'text' }}"
-          placeholder="Password"
-          required
-          [(ngModel)]="form.password"
-          name="password"
-          minlength="8"
-        />
-        <button
-          mat-icon-button
-          matSuffix
-          (click)="hide = !hide"
-          [attr.aria-label]="'Hide password'"
-        >
-          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
-        </button>
-      </mat-form-field>
+      <label>Password</label>
+      <input
+        type="password"
+        placeholder="Password"
+        required
+        [(ngModel)]="form.password"
+        name="password"
+        minlength="8"
+      />
     </div>
     <button type="submit" class="app-login-btn">Login</button>
     <p>
-      Do not have an account yet?
-      <button class="app-toggle-btn" type="button">
-        <a href="/register">Register Here</a>
-      </button>
+      Do not have an accout yet?
+      <button class="app-toggle-btn" type="button">Register Here</button>
     </p>
   </form>
 </div>
