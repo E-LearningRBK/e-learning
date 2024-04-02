@@ -1,4 +1,6 @@
 const Material = require("../model/material.model");
+const { Op } = require("sequelize");
+
 module.exports = {
   //admin/user
   getAllMaterial: async (req, res) => {
@@ -51,6 +53,21 @@ module.exports = {
       const { id } = req.params;
       const result = await Material.destroy({ where: { id: id } });
       res.status(204).json(result);
+    } catch (err) {
+      res.status(404).send(err);
+    }
+  },
+  getsearched: async (req, res) => {
+    try {
+      const { searched } = req.params;
+      const result = await Material.findAll({
+        where: {
+          name: {
+            [Op.like]: `%${searched}%`,
+          },
+        },
+      });
+      res.status(200).json(result);
     } catch (err) {
       res.status(404).send(err);
     }
