@@ -10,9 +10,11 @@ import { homeComponent } from './admin/components/admin-home/home.component'
 import { AllCoursesForAdminComponent } from './admin/components/all-courses-for-admin/all-courses-for-admin.component';
 import { AllUsersForAdminComponent } from './admin/components/all-users-for-admin/all-users-for-admin.component';
 import { CreateCourseComponent } from './admin/components/create-course/create-course.component';
+import { StudentDetailComponent } from './admin/components/student-detail/student-detail.component';
 
 
 export const routes: Routes = [
+  {path: "studentDetail/:id" , component : StudentDetailComponent},
   {path:'createCourse',component:CreateCourseComponent},
   {path : 'adminHome', component:homeComponent}, // "homeComponent" for admin
   {path : 'home' , component: HomeComponent},// "HomeComponent" user for user
