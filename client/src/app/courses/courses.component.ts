@@ -3,13 +3,14 @@ import { MaterialService } from './courses.service';
 import { Material } from './courses.model';
 import { AppComponent } from '../app.component';
 import { Router } from '@angular/router';
+import { SearchBarComponent } from "../search-bar/search-bar.component";
 
 @Component({
-  selector: 'app-material-list',
-  templateUrl: './courses.component.html',
-  styleUrls: ['./courses.component.css'],
-  standalone: true,
-  imports: [AppComponent],
+    selector: 'app-material-list',
+    templateUrl: './courses.component.html',
+    styleUrls: ['./courses.component.css'],
+    standalone: true,
+    imports: [AppComponent, SearchBarComponent]
 })
 export class courses implements OnInit {
   materials: Material[] = [];
