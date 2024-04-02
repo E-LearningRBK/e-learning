@@ -1,0 +1,21 @@
+<div class="search-container">
+  <input
+    type="text"
+    name="search-box"
+    class="search-box"
+    (keyup)="sendData($event)"
+  />
+
+
+  <section class="search-result" *ngIf="sec && materials.length > 0">
+    @for (material of materials; track $index){
+
+    <hr />
+    <p (click)="renavigate(material.id)">{{ material.name }}</p>
+    <hr />
+    } @if (has&&materials.length===0) {
+    <p>Sorry . nothing found!!</p>
+    }
+  </section>
+  
+</div>
