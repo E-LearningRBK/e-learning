@@ -1,5 +1,5 @@
 @defer (when (data && enrolled)) {
-<section class="course-details">
+<section class="course-details card">
     <div class="course-headers">
         <div class="course-headers-info">
             <div class="course-title">{{data.name}}</div>
@@ -9,8 +9,8 @@
         <div class="course-action">
             @if(enrolled.result){
             <div>
-                <p>Enrolled At {{enrolled.date}}</p>
-                <a target="_blank" [href]="data.link" class="course-badge">
+                <p class="text-[16px] font-[400] text-[#4b4b4b]">Enrolled Since {{enrolledDate}}</p>
+                <a target="_blank" [href]="data.link" class="btn btn-sm btn-outline-primary float-end">
                     Go To Lessons
                 </a>
             </div>
@@ -25,6 +25,12 @@
     </div>
     <div class="course-body">
         {{data.description}}
+    </div>
+
+    <div class="card-footer flex justify-end px-3 border-0 bg-[#fafafa]">
+        <button class="btn btn btn-outline-danger">
+            Disenroll
+        </button>
     </div>
 
 </section>
