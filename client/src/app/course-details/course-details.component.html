@@ -1,10 +1,7 @@
-<!-- navbar placeholder -->
-<nav style="height: 70px; background-color: #e2e2e2;"></nav>
-
 @defer (when (data && enrolled)) {
 <section class="course-details">
     <div class="course-headers">
-        <div>
+        <div class="course-headers-info">
             <div class="course-title">{{data.name}}</div>
             <div class="course-price">{{data.price}}TND</div>
             <div class="course-date">{{data.date}}</div>
@@ -25,9 +22,6 @@
         </div>
     </div>
     <div class="course-body">
-        {{data.description}}
-        {{data.description}}
-        {{data.description}}
         {{data.description}}
     </div>
 
