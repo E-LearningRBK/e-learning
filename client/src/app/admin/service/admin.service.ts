@@ -17,7 +17,8 @@ export class adminService {
     return this.http.get<Material[]>(`${this.baseUrlForMat}/getAll`);
   }
 
-  getAllUsers() : Observable<Material[]>{
+  getAllUsers() : Observable<users[]>{
     return this.http.get<users[]>(`${this.baseUrlForUsers}/getAll`)
   }
+  // getOne() : Observable
 }
