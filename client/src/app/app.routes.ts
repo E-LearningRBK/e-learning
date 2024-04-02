@@ -11,6 +11,7 @@ import { AllCoursesForAdminComponent } from './admin/components/all-courses-for-
 import { AllUsersForAdminComponent } from './admin/components/all-users-for-admin/all-users-for-admin.component';
 import { CreateCourseComponent } from './admin/components/create-course/create-course.component';
 import { StudentDetailComponent } from './admin/components/student-detail/student-detail.component';
+import { EditComponent } from './edit/edit.component';
 
 
 export const routes: Routes = [
@@ -27,5 +28,7 @@ export const routes: Routes = [
   { path: 'course/:id', component: CourseDetailsComponent },
   { path: 'my-courses', component: UserCoursesComponent },
   { path: 'all-courses', component: courses },
+  { path: 'edit', component: EditComponent },
+
  
 ];
