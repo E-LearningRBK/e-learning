@@ -36,11 +36,10 @@ export class CourseDetailsComponent implements OnInit {
             'dd/MM/yyyy'
           );
           console.log(this.enrolledDate);
-          
         });
 
       this.courseDetailsService
-        .userEnrolled(22, this.materialId)
+        .userEnrolled(this.materialId)
         .subscribe((response) => {
           this.enrolled = response;
         });
@@ -48,8 +47,15 @@ export class CourseDetailsComponent implements OnInit {
   }
 
   enroll() {
+    this.courseDetailsService.enroll(this.materialId).subscribe((response) => {
+      console.log(response);
+      window.location.reload();
+    });
+  }
+
+  disenroll() {
     this.courseDetailsService
-      .enroll(22, this.materialId)
+      .disenroll(this.materialId)
       .subscribe((response) => {
         console.log(response);
         window.location.reload();
