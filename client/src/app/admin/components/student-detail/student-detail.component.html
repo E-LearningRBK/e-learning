@@ -1,33 +1,28 @@
-
-<!-- i'll improve the card html later ! -->
-<div style="text-align: center;">
-    Card:
-<div>
-    User : 
-    @defer(when user ){
-        <section>
-            <div>
-                <div>
-                    <img src="{{user.imageUrl}}" > <br>
-                    FIRSTNAME :   {{user.firstName}} <br>
-                    LASTNAME : {{user.lastName}} 
+<div class="flex justify-center items-center h-screen">
+    <div class="card mb-3" style="max-width: 600px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                @defer(when user){
+                    <!-- user.imageUrl -->
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgtOvib9DAid8R8y96JhR4zVTyaFB9N2XIDxe29v7Wng&s" class="img-fluid rounded-start" alt="User Image">
+                }
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    @defer(when user){
+                        <h5 class="card-title font-bold text-xl md:text-2xl">{{user.firstName}} {{user.lastName}}</h5>
+                    }
+                    <p class="card-text text-gray-700">JOINED MATERIAL:</p>
+                    <ul class="list-group list-group-flush">
+                        @for(e of user.materials ; track e.id){
+                            <li class="list-group-item text-lg">{{e.name}}</li>
+                        }
+                    </ul>
+                </div>
+                <div class="card-footer d-flex justify-content-end">
+                    <button (click) = 'navigateToUser()' class="btn btn-primary">go back</button>
                 </div>
             </div>
-        </section>
-    }
-    
-</div>
-
-
-<div> JOINED MATERIAL :
-    <div>
-    @for(e of user.materials ; track e.id){
-        <section>
-            <div>
-                <div>{{e.name}}</div>
-            </div>
-        </section>
-        }
+        </div>
     </div>
-</div>
 </div>
