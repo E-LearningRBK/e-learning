@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseDetailsService } from './course-details.service';
 import { ActivatedRoute } from '@angular/router';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'course-details',
   standalone: true,
-  imports: [MatMenuModule, MatButtonModule],
+  imports: [],
   templateUrl: './course-details.component.html',
   styleUrl: './course-details.component.css',
 })
