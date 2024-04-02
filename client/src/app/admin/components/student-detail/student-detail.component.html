@@ -1,1 +1,33 @@
-<p>student-detail works!</p>
+
+<!-- i'll improve the card html later ! -->
+<div style="text-align: center;">
+    Card:
+<div>
+    User : 
+    @defer(when user ){
+        <section>
+            <div>
+                <div>
+                    <img src="{{user.imageUrl}}" > <br>
+                    FIRSTNAME :   {{user.firstName}} <br>
+                    LASTNAME : {{user.lastName}} 
+                </div>
+            </div>
+        </section>
+    }
+    
+</div>
+
+
+<div> JOINED MATERIAL :
+    <div>
+    @for(e of user.materials ; track e.id){
+        <section>
+            <div>
+                <div>{{e.name}}</div>
+            </div>
+        </section>
+        }
+    </div>
+</div>
+</div>
