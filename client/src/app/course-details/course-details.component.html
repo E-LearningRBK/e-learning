@@ -9,15 +9,17 @@
         <div class="course-action">
             @if(enrolled.result){
             <div>
-                <p>Enrooled At {{enrolled.date}}</p>
+                <p>Enrolled At {{enrolled.date}}</p>
                 <a target="_blank" [href]="data.link" class="course-badge">
                     Go To Lessons
                 </a>
             </div>
             }@else {
-            <button (click)="enroll()" class="btn btn-dark">
-                Enroll
-            </button>
+            <div>
+                <button (click)="enroll()" class="btn btn-lg btn-outline-success">
+                    Enroll
+                </button>
+            </div>
             }
         </div>
     </div>

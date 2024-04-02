@@ -1,51 +1,31 @@
 .course-details {
-  background-color: #ffffcc;
-  margin: 70px auto 10px;
-  max-width: 1000px;
-  padding: 20px;
+  @apply border rounded max-w-[1000px] p-[15px] m-[70px_auto_10px];
 }
 
 .course-headers {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 100px;
+  @apply grid grid-cols-2 gap-[100px];
+}
+
+.course-headers-info {
+  @apply divide-y;
 }
 
 .course-title {
-  background-color: #e2e2e2;
-  padding: 20px 30px 10px;
-  font-size: 28px;
+  @apply p-[20px_30px_10px] text-[28px] text-[#116c7e] font-medium;
 }
 
 .course-price {
-  background-color: #e2e2e2;
-  padding: 10px 30px;
-  margin: 5px 0;
-  font-size: 22px;
+  @apply p-[10px_30px] m-[5px_0px] text-[22px] text-[#303030] font-[400];
 }
 
 .course-date {
-  background-color: #e2e2e2;
-  padding: 10px 30px;
-  margin: 5px 0;
-  font-size: 22px;
+  @apply p-[10px_30px] m-[5px_0px] text-[22px] text-[#303030] font-[400];
 }
 
 .course-action {
-  margin-left: auto;
-  background-color: #f0f0f0;
-  padding: 20px 30px;
+  @apply flex justify-end p-[20px];
 }
 
 .course-body {
-  margin-left: auto;
-  background-color: #e2e2e2;
-  padding: 20px 30px;
-  font-size: 18px;
-}
-
-.course-badge {
-  background-color: #99cbea;
-  padding: 20px 30px;
-  margin-top: 100px;
+  @apply text-[18px] text-[#3f3f3f] p-[20px_30px];
 }
