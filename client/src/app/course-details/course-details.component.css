@@ -3,7 +3,7 @@
 }
 
 .course-headers {
-  @apply grid grid-cols-2 gap-[100px];
+  @apply grid grid-cols-2;
 }
 
 .course-headers-info {
