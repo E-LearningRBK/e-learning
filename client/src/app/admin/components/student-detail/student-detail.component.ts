@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {adminService} from "../../service/admin.service"
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-student-detail',
   standalone: true,
@@ -14,7 +14,8 @@ userId : any
 
 constructor(
 private  adminService : adminService,
-private route : ActivatedRoute 
+private route : ActivatedRoute ,
+private router : Router
 ){}
 ngOnInit(): void {
   this.fetchOneUser()
@@ -30,4 +31,9 @@ this.adminService.getOneUser(this.userId).subscribe((res)=>{
 })
 })
 }
+
+navigateToUser():void{
+  this.router.navigate(['/AllUsersForAdmin'])
+}
+
 }
