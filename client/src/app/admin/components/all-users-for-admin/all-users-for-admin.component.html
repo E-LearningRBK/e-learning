@@ -6,6 +6,7 @@
         <th>Last Name</th>
         <th>Email</th>
         <th>Password</th>
+        <th>details link</th>
       </tr>
     </thead>
     <tbody>
@@ -16,7 +17,7 @@
         <td>{{e.lastName}}</td>
         <td>{{e.email}}</td>
         <td>{{e.password}}</td>
-        <button (click) = "navigateToDetails(e)" >details</button>
+        <td (click) = "navigateToDetails(e)" > 🢘 CLICK to see detail</td>
       </tr>
     }
     </tbody>
