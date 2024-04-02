@@ -10,14 +10,14 @@
     </thead>
     <tbody>
         @for(e of users ; track e.id){
-      <tr >
-
-            <td><img [src]="e.imageUrl" alt="User Image"></td>
-            <td>{{e.firstName}}</td>
-            <td>{{e.lastName}}</td>
-            <td>{{e.email}}</td>
-            <td>{{e.password}}</td>
-        </tr>
+      <tr  >
+        <td><img [src]="e.imageUrl" alt="User Image"></td>
+        <td>{{e.firstName}}</td>
+        <td>{{e.lastName}}</td>
+        <td>{{e.email}}</td>
+        <td>{{e.password}}</td>
+        <button (click) = "navigateToDetails(e)" >details</button>
+      </tr>
     }
     </tbody>
   </table>

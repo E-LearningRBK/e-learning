@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { adminService } from '../../service/admin.service';
 import { users } from '../../model/users.model';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-all-users-for-admin',
   standalone: true,
@@ -14,7 +14,7 @@ export class AllUsersForAdminComponent implements OnInit {
 
   constructor(
     private admineSevice: adminService,
-   
+   private router : Router
   ) {}
 
   ngOnInit(): void {
@@ -26,4 +26,10 @@ export class AllUsersForAdminComponent implements OnInit {
       this.users = users;
     });
   }
+
+  navigateToDetails( user : users) : void{
+    this.router.navigate(['/studentDetail', user.id]);
+  }
+
+  
 }
