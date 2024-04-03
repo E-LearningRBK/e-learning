@@ -1,6 +1,8 @@
 import { Component , OnInit } from '@angular/core';
 import { Material } from '../../model/courses.model';
-import { adminService } from '../../service/admin.service';
+import { AdminMaterialServiceService } from '../../service/admin-material-service.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-all-courses-for-admin',
@@ -13,8 +15,8 @@ export class AllCoursesForAdminComponent implements OnInit {
   materials: Material[] = [];
 
   constructor(
-    private materialService: adminService,
-    
+    private AdminMaterialServiceService: AdminMaterialServiceService,
+    private router : Router
   ) {}
 
   ngOnInit(): void {
@@ -22,11 +24,13 @@ export class AllCoursesForAdminComponent implements OnInit {
   }
 
   fetchMaterials(): void {
-    this.materialService.getAllMaterials().subscribe((materials) => {
+    this.AdminMaterialServiceService.getAllMaterials().subscribe((materials) => {
       this.materials = materials;
     });
   }
 
-
+  navigateToCourses( mat : Material) : void{
+    this.router.navigate(['/updateMatForAdmin', mat.id]);
+  }
 
 }
