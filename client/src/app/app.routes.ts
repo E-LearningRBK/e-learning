@@ -30,14 +30,14 @@ export const routes: Routes = [
     path: '',
     component: IndexComponent,
     children: [
-      { path: 'home', component: HomeComponent }, // "HomeComponent" user for user
       { path: '', component: WelcomeComponent },
-      { path: 'login', component: LoginComponent },
-      { path: 'register', component: RegisterComponent },
+      { path: 'home', component: HomeComponent }, // "HomeComponent" user for user
       { path: 'course', component: CourseDetailsComponent },
       { path: 'course/:id', component: CourseDetailsComponent },
       { path: 'my-courses', component: UserCoursesComponent },
       { path: 'all-courses', component: courses },
     ],
   },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
 ];
