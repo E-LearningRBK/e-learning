@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { adminService } from '../../service/admin.service';
+import { AdminUserServiceService } from '../../service/admin-user-service.service';
 import { users } from '../../model/users.model';
 import { Router } from '@angular/router';
 @Component({
@@ -13,7 +13,7 @@ export class AllUsersForAdminComponent implements OnInit {
   users: users[] = [];
 
   constructor(
-    private admineSevice: adminService,
+    private AdminUserServiceService: AdminUserServiceService,
    private router : Router
   ) {}
 
@@ -22,7 +22,7 @@ export class AllUsersForAdminComponent implements OnInit {
   }
 
   fetcher(): void {
-    this.admineSevice.getAllUsers().subscribe((users) => {
+    this.AdminUserServiceService.getAllUsers().subscribe((users) => {
       this.users = users;
     });
   }

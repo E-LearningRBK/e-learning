@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {adminService} from "../../service/admin.service"
+import {AdminUserServiceService} from "../../service/admin-user-service.service"
 import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-student-detail',
@@ -13,7 +13,7 @@ user : any
 userId : any
 
 constructor(
-private  adminService : adminService,
+private  AdminUserServiceService : AdminUserServiceService,
 private route : ActivatedRoute ,
 private router : Router
 ){}
@@ -24,7 +24,7 @@ ngOnInit(): void {
 fetchOneUser() :void{
 this.route.paramMap.subscribe((param)=>{
   this.userId = param.get('id')
-this.adminService.getOneUser(this.userId).subscribe((res)=>{
+this.AdminUserServiceService.getOneUser(this.userId).subscribe((res)=>{
 
   console.log("res:",res)
   this.user = res
