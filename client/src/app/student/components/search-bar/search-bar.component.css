@@ -10,9 +10,10 @@
   width: 95%;
 }
 .search-box {
+  border: #858585 solid ;
+  border-radius: 5px;
   height: 30px;
-  padding: 10 20px;
-  display: block;
+  
 }
 .search-result {
   /* display:none; */
