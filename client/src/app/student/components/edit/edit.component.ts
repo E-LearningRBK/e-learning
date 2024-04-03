@@ -1,25 +1,33 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../Services/auth.service';
-import { FormsModule } from '@angular/forms';
-
+import { FormControl, FormsModule, Validators } from '@angular/forms';
+import { EditService } from './edit.service';
+import { User } from './edit.model';
+import { FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
-  selector: 'app-register',
+  selector: 'app-edit',
   standalone: true,
   imports: [FormsModule],
-  templateUrl: './register.component.html',
-  styleUrl: './register.component.css',
+  templateUrl: './edit.component.html',
+  styleUrl: './edit.component.css',
 })
-export class RegisterComponent {
+export class EditComponent {
   form: any = {
     firstName: null,
     lastName: null,
     email: null,
     password: null,
     imageUrl: null,
+    newPassword: null,
   };
   image: string =
     'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png';
-  constructor(private authService: AuthService) {}
+  constructor(
+    public editService: EditService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
+
   onFileSelected(e: any) {
     const file: File = e.target.files[0];
     this.form.imageUrl = file;
@@ -33,17 +41,9 @@ export class RegisterComponent {
     formData.append('lastName', this.form.lastName);
     formData.append('email', this.form.email);
     formData.append('password', this.form.password);
+    formData.append('newPassword', this.form.newPassword);
     console.log(this.form);
-
-    this.authService
-      .singup(formData)
-      .subscribe({
-        next: (data) => {
-          console.log(data);
-        },
-        error: (err) => {
-          console.log(err);
-        },
-      });
   }
+
+  submit() {}
 }

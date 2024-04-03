@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { MaterialUserService } from './courses.service';
-import { AppComponent } from '../app.component';
+import { AppComponent } from '../../../app.component';
 import { Material } from '../courses/courses.model';
 
 import { CourseDetailsService } from '../course-details/course-details.service';
 
-import {  SearchBarComponent } from '../search-bar/search-bar.component';
-
+import { SearchBarComponent } from '../search-bar/search-bar.component';
 
 @Component({
   selector: 'app-user-courses',
@@ -17,7 +16,6 @@ import {  SearchBarComponent } from '../search-bar/search-bar.component';
 })
 export class UserCoursesComponent implements OnInit {
   materials: Material[] = [];
-  id: number = 5;
   constructor(
     private materialUserService: MaterialUserService,
     private courseDetailsService: CourseDetailsService
@@ -28,7 +26,7 @@ export class UserCoursesComponent implements OnInit {
   }
 
   fetchMaterials(): void {
-    this.materialUserService.getAllMaterials(this.id).subscribe((materials) => {
+    this.materialUserService.getAllMaterials().subscribe((materials) => {
       this.materials = materials;
     });
   }

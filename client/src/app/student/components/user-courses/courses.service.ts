@@ -12,7 +12,7 @@ export class MaterialUserService {
 
   constructor(private http: HttpClient) { }
 
-  getAllMaterials(id: number): Observable<Material[]> {
+  getAllMaterials(): Observable<Material[]> {
     return this.http.get<Material[]>(`${this.baseUrl}/getmaterials`);
   }
 

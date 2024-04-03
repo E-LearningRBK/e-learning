@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MaterialService } from './courses.service';
 import { Material } from './courses.model';
-import { AppComponent } from '../app.component';
+import { AppComponent } from '../../../app.component';
 import { Router } from '@angular/router';
 import { SearchBarComponent } from "../search-bar/search-bar.component";
 

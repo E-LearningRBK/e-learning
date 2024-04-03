@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../Services/auth.service';
+import { AuthService } from '../../Services/auth.service';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -28,7 +28,7 @@ export class LoginComponent {
           console.log(res);
           localStorage.setItem('token', res.token);
           if (res.logeduser.role === 'admin') {
-            this.router.navigate(['/adminHome']);
+            this.router.navigate(['/admin']);
           } else {
             this.router.navigate(['/my-courses']);
           }
