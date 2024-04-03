@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: Signika;
+  src: url(./assets/fonts/Signika.ttf);
+}
+
+body {
+  font-family: Signika;
+}
