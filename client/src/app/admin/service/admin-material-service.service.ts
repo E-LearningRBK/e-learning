@@ -16,4 +16,12 @@ export class AdminMaterialServiceService {
   updateMat(id: any, updatedMaterial: Material): Observable<Material> {
     return this.http.put<Material>(`${this.baseUrlForMat}/update/${id}`, updatedMaterial);
   }
+  createMat(form: any){
+    return this.http.post(`${this.baseUrlForMat}/add`, {
+      form
+    });
+  }
+  delMat(id: any): Observable<Material> {
+    return this.http.delete<Material>(`${this.baseUrlForMat}/delete/${id}`);
+  }
 }

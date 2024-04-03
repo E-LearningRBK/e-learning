@@ -16,7 +16,8 @@ export class AllCoursesForAdminComponent implements OnInit {
 
   constructor(
     private AdminMaterialServiceService: AdminMaterialServiceService,
-    private router : Router
+    private router : Router,
+  
   ) {}
 
   ngOnInit(): void {
@@ -32,5 +33,15 @@ export class AllCoursesForAdminComponent implements OnInit {
   navigateToCourses( mat : Material) : void{
     this.router.navigate(['/admin/updateMatForAdmin', mat.id]);
   }
+
+  
+  delCourse(id :any): void {
+  this.AdminMaterialServiceService.delMat(id).subscribe(() => {
+    this.fetchMaterials()
+    console.log('deleted')
+
+})
+  }
+  
 
 }
