@@ -15,11 +15,13 @@ import { EditComponent } from './student/components/edit/edit.component';
 
 import { AdminIndexComponent } from './admin/components/admin-index/admin-index.component';
 import { IndexComponent } from './student/components/index/index.component';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
   {
     path: 'admin',
     component: AdminIndexComponent,
+    canActivate: [authGuard],
     children: [
       { path: '', component: homeComponent }, // "homeComponent" for admin
       { path: 'createCourse', component: CreateCourseComponent },
@@ -31,10 +33,14 @@ export const routes: Routes = [
   {
     path: '',
     component: IndexComponent,
+    canActivate: [authGuard],
     children: [
       { path: '', component: WelcomeComponent },
       { path: 'home', component: HomeComponent }, // "HomeComponent" user for user
-      { path: 'course', component: CourseDetailsComponent },
+      {
+        path: 'course',
+        component: CourseDetailsComponent,
+      },
       { path: 'course/:id', component: CourseDetailsComponent },
       { path: 'my-courses', component: UserCoursesComponent },
       { path: 'edit', component: EditComponent },
