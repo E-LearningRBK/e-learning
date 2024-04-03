@@ -15,33 +15,51 @@ import { EditComponent } from './student/components/edit/edit.component';
 import { AdminIndexComponent } from './admin/components/admin-index/admin-index.component';
 import { IndexComponent } from './student/components/index/index.component';
 import { UpdateCourseForAdminComponent } from './admin/components/update-course-for-admin/update-course-for-admin.component';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
-  {
-    path: 'admin',
-    component: AdminIndexComponent,
-    children: [
-      { path: '', component: homeComponent }, // "homeComponent" for admin
-      { path: 'createCourse', component: CreateCourseComponent },
-      { path: 'AllUsersForAdmin', component: AllUsersForAdminComponent },
-      { path: 'AllCoursesForAdmin', component: AllCoursesForAdminComponent },
-      { path: 'studentDetail/:id', component: StudentDetailComponent },
-      {path : "updateMatForAdmin/:id" , component : UpdateCourseForAdminComponent}
-    ],
-  },
+  // Welcome Route
   {
     path: '',
     component: IndexComponent,
+    children: [{ path: '', component: WelcomeComponent }],
+  },
+  // User Routes
+  {
+    path: '',
+    component: IndexComponent,
+    canActivate: [authGuard],
     children: [
       { path: '', component: WelcomeComponent },
       { path: 'home', component: HomeComponent }, // "HomeComponent" user for user
-      { path: 'course', component: CourseDetailsComponent },
+      {
+        path: 'course',
+        component: CourseDetailsComponent,
+      },
       { path: 'course/:id', component: CourseDetailsComponent },
       { path: 'my-courses', component: UserCoursesComponent },
       { path: 'edit', component: EditComponent },
       { path: 'all-courses', component: courses },
     ],
   },
+  // Auth Routes
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  // Admin Routes
+  {
+    path: 'admin',
+    component: AdminIndexComponent,
+    canActivate: [authGuard],
+    children: [
+      { path: '', component: homeComponent }, // "homeComponent" for admin
+      { path: 'createCourse', component: CreateCourseComponent },
+      { path: 'AllUsersForAdmin', component: AllUsersForAdminComponent },
+      { path: 'AllCoursesForAdmin', component: AllCoursesForAdminComponent },
+      { path: 'studentDetail/:id', component: StudentDetailComponent },
+      {
+        path: 'updateMatForAdmin/:id',
+        component: UpdateCourseForAdminComponent,
+      },
+    ],
+  },
 ];

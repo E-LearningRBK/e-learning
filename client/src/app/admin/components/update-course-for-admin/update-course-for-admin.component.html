@@ -1,51 +1,58 @@
-
 <div class="card mx-auto mt-4" style="max-width: 600px">
   <div class="card-body d-flex flex-column">
-    <h5 class="card-title">update Form</h5>
-    <form class="flex-grow-1">
+    <h5 class="card-title">Update Form</h5>
+    <form class="flex-grow-1 position-relative mb-5" (ngSubmit)="update()">
       <div class="form-floating mb-3">
         <input
           type="text"
           class="form-control"
-          id="nameInput"
           placeholder="name@example.com"
+          [(ngModel)]="form.name"
+          name="first"
         />
-        <label for="nameInput">update Name</label>
+        <label for="nameInput">Update Name</label>
       </div>
       <div class="form-floating mb-3">
         <input
           type="number"
           class="form-control"
-          id="priceInput"
           placeholder="0.00"
+          [(ngModel)]="form.price"
+          name="price"
         />
-        <label for="priceInput">update Price</label>
+        <label for="priceInput">Update Price</label>
       </div>
       <div class="form-floating">
         <textarea
           class="form-control"
           placeholder="Leave a comment here"
-          id="descriptionTextarea"
+          [(ngModel)]="form.description" 
+          name="description"
           style="height: 100px"
         ></textarea>
-        <label for="descriptionTextarea">update Description</label>
+        <label for="descriptionTextarea">Update Description</label>
       </div>
       <div class="form-floating mb-3">
-        <input type="date" class="form-control" id="dateInput" />
+        <input
+          [(ngModel)]="form.date"
+          name="date"
+          type="date"
+          class="form-control"
+          id="dateInput"
+        />
         <label for="dateInput">Date</label>
       </div>
       <div class="form-floating mb-3">
         <input
           type="url"
           class="form-control"
-          id="linkInput"
           placeholder="https://example.com"
+          [(ngModel)]="form.link"
+          name="link"
         />
-        <label for="linkInput">update Link</label>
+        <label for="linkInput">Update Link</label>
       </div>
+      <button type="submit" class="btn btn-primary position-absolute bottom-0.0 end-0">Submit</button>
     </form>
-    <button
-    (click)= 'navigateToAllCourses()'
-    type="submit" class="btn btn-primary align-self-end">Submit</button>
   </div>
 </div>

@@ -15,6 +15,6 @@ router.post("/add",isAdminAuthenticated,createMaterial)
 
 router.put("/update/:id",/*isAdminAuthenticated ,*/ updateMaterial)
 
-router.delete("/delete/:id",isAdminAuthenticated, deleteMaterial)
+router.delete("/delete/:id",/*isAdminAuthenticated ,*/ deleteMaterial)
 
 module.exports = router    
