@@ -4,7 +4,11 @@ const Material = require("./material.model.js");
 
 const User = sequelize.define("User", {
   // define schema with role here !
-
+  id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true,
+  },
   firstName: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -42,8 +46,8 @@ const User = sequelize.define("User", {
 
 // relation Between user , material & teacher
 
-User.belongsToMany(Material, { through: "UserMaterial" });
+  User.belongsToMany(Material, { through: "UserMaterial" });
 
-Material.belongsToMany(User, { through: "UserMaterial" });
+  Material.belongsToMany(User, { through: "UserMaterial" });
 
 module.exports = User;
