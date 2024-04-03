@@ -10,6 +10,6 @@ import { Router } from '@angular/router';
 export class NavBarComponent {
   constructor(private router: Router) {}
   navigateToWelc(): void {
-    this.router.navigate(['/welcome']);
+    this.router.navigate(['/']);
   }
 }

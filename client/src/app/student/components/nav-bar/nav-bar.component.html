@@ -1,34 +1,24 @@
-<div class="nav">
-  <div class="nav-header">
+<nav class="nav">
+  <div (click)="navigateToWelc()" class="nav-header nav-item">
+    <img src="../../../../assets/logo.png" alt="Logo" width="50">
+    <span>E-Lyceum</span>
+  </div>
 
+  <div class="nav-links">
+    <div>
+      <a class="nav-item navlink" href="/home">
+        Home
+      </a>
+    </div>
+    <div>
+      <a class="nav-item navlink" href="/all-courses">Courses</a>
+    </div>
+    <div>
+      <a class="nav-item navlink" href="/my-courses">My Classes</a>
+    </div>
+  </div>
+
+  <div class="nav-dropdown nav-item">
     <img src="../../../../assets/logo.png" (click)="navigateToWelc()" alt="Logo" width="50">
-
-
   </div>
-  <div class="nav-btn">
-    <input type="checkbox" id="nav-check">
-    <label for="nav-check">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
-  </div>
-  <div class="nav-links">
-    <a href="/home">home</a>
-  </div>
-  <div class="nav-links">
-    <a href="/all-courses">Courses</a>
-  </div>
-  <div class="nav-links">
-    <a href="/my-courses">Enrolled in</a>
-  </div>
-  <div class="nav-links">
-    <a href="/login">Login</a>
-  </div>
-  <div class="nav-links">
-    <a href="/register">SignUp</a>
-  </div>
-  <div class="nav-links">
-    <a href="/edit">Edit</a>
-  </div>
-</div>
+</nav>
