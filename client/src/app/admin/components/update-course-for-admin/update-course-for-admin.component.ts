@@ -13,48 +13,57 @@ import { FormsModule } from '@angular/forms';
 })
 export class UpdateCourseForAdminComponent {
   constructor(
-    private AdminMaterialServiceService :  AdminMaterialServiceService ,
-    private router : Router,
-    private active : ActivatedRoute
-    ){}
-    form: Material = {
-      name: '', 
-      description: '', 
-      price: 0, 
-      date: '', 
-      link: '' 
-    };
+    private AdminMaterialServiceService: AdminMaterialServiceService,
+    private router: Router,
+    private active: ActivatedRoute
+  ) { }
 
-id:any
-navigateToAllCourses():void{
-this.router.navigate(['/admin/AllCoursesForAdmin'])
+  form: Material = {
+    name: '',
+    description: '',
+    price: 0,
+    date: '',
+    link: ''
+  };
+
+  id: any;
+
+  navigateToAllCourses(): void {
+    this.router.navigate(['/admin/AllCoursesForAdmin']);
+  }
+
+  update(): void {
+    this.active.paramMap.subscribe((param) => {
+      this.id = param.get('id');
+      console.log("this.id :", this.id);
+
+      let updatedData: any = {};
+
+     
+      if (this.form.name && this.form.name.trim() !== '') {
+        updatedData.name = this.form.name;
+      }
+      if (this.form.description && this.form.description.trim() !== '') {
+        updatedData.description = this.form.description;
+      }
+      if (this.form.price !== 0) {
+        updatedData.price = this.form.price;
+      }
+      if (this.form.date && this.form.date.trim() !== '') {
+        updatedData.date = this.form.date;
+      }
+      if (this.form.link && this.form.link.trim() !== '') {
+        updatedData.link = this.form.link;
+      }
+
+     
+      if (Object.keys(updatedData).length > 0) {
+        this.AdminMaterialServiceService.updateMat(this.id, updatedData).subscribe(
+          (res) => {
+            console.log('res :',res);
+            this.navigateToAllCourses();
+          })
+      }
+    });
+  }
 }
-    update(): void {
-      this.active.paramMap.subscribe((param)=>{
-            this.id = param.get('id') 
-            console.log("this.id :",this.id )
-            this.AdminMaterialServiceService.updateMat(this.id, this.form).subscribe(
-              () => {
-                console.log('updated !');
-                this.navigateToAllCourses()
-              },
-              () => {
-                
-              
-                alert('implement all the feilds');
-              }
-              
-            );
-      })
-    }
-
-    
-    
-    
-   
-    
-}
-
-
-
-
