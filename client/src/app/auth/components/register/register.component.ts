@@ -27,23 +27,30 @@ export class RegisterComponent {
   }
 
   onSubmit() {
+    if (!this.StrongPassword(this.form.password)) {
+      alert(
+        'Password must contain at least 8 characters, including at least one uppercase letter, one lowercase letter, and one number.'
+      );
+      return;
+    }
     const formData = new FormData();
     formData.append('imageUrl', this.form.imageUrl);
     formData.append('firstName', this.form.firstName);
     formData.append('lastName', this.form.lastName);
     formData.append('email', this.form.email);
     formData.append('password', this.form.password);
-    console.log(this.form);
 
-    this.authService
-      .singup(formData)
-      .subscribe({
-        next: (data) => {
-          console.log(data);
-        },
-        error: (err) => {
-          console.log(err);
-        },
-      });
+    this.authService.singup(formData).subscribe({
+      next: (data) => {
+        console.log(data);
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
+  }
+  StrongPassword(password: string): boolean {
+    const Regx: RegExp = /^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{8,}$/;
+    return Regx.test(password);
   }
 }
