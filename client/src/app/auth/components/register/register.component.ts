@@ -27,12 +27,8 @@ export class RegisterComponent {
   }
 
   onSubmit() {
-    if (!this.StrongPassword(this.form.password)) {
-      alert(
-        'Password must contain at least 8 characters, including at least one uppercase letter, one lowercase letter, and one number.'
-      );
-      return;
-    }
+   
+    
     const formData = new FormData();
     formData.append('imageUrl', this.form.imageUrl);
     formData.append('firstName', this.form.firstName);
