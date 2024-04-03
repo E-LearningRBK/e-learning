@@ -21,7 +21,7 @@ export class UpdateCourseForAdminComponent {
   
     
     navigateToAllCourses():void{
-      this.router.navigate(['/AllCoursesForAdmin'])
+      this.router.navigate(['/admin/AllCoursesForAdmin'])
     }
 }
 

@@ -28,7 +28,7 @@ export class AllUsersForAdminComponent implements OnInit {
   }
 
   navigateToDetails( user : users) : void{
-    this.router.navigate(['/studentDetail', user.id]);
+    this.router.navigate(['/admin/studentDetail', user.id]);
   }
 
   

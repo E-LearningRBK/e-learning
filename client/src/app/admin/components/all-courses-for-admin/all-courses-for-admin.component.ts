@@ -30,7 +30,7 @@ export class AllCoursesForAdminComponent implements OnInit {
   }
 
   navigateToCourses( mat : Material) : void{
-    this.router.navigate(['/updateMatForAdmin', mat.id]);
+    this.router.navigate(['/admin/updateMatForAdmin', mat.id]);
   }
 
 }

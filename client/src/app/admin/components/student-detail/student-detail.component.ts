@@ -33,7 +33,7 @@ this.AdminUserServiceService.getOneUser(this.userId).subscribe((res)=>{
 }
 
 navigateToUser():void{
-  this.router.navigate(['/AllUsersForAdmin'])
+  this.router.navigate(['/admin/AllUsersForAdmin'])
 }
 
 }

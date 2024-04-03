@@ -28,7 +28,7 @@ export class CreateCourseComponent {
         if(res){
           this.toggleModal()
           alert('created sucssefully')
-          this.router.navigate(['/AllCoursesForAdmin']);
+          this.router.navigate(['/admin/AllCoursesForAdmin']);
 
         };
         
