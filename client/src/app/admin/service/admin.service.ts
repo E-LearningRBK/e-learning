@@ -20,5 +20,8 @@ export class adminService {
   getAllUsers() : Observable<users[]>{
     return this.http.get<users[]>(`${this.baseUrlForUsers}/getAll`)
   }
-  // getOne() : Observable
+  getOneUser(id : number) : Observable<users[]>{
+    return this.http.get<users[]>(`${this.baseUrlForUsers}/getOne/${id}`)
+  }
+  
 }

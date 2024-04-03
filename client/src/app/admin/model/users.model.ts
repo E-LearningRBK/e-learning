@@ -1,3 +1,4 @@
+import { Material } from "./courses.model";
 export interface users {
   id?: number;
   firstName?: string;
@@ -7,5 +8,6 @@ export interface users {
   role?: string;
   isactive? : string;
   activationcode? : string;
-  imageUrl? : string
+  imageUrl? : string;
+  materials? : Material[];
 }

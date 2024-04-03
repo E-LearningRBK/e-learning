@@ -3,6 +3,7 @@ const User = require("../model/user.model.js");
 const jwt = require("jsonwebtoken");
 
 const { upload, getRandomString } = require("../helper/helperFunction.js");
+const Material = require("../model/material.model.js");
 // const { sendConfirmation } = require("../utils/sendEmail.js");
 
 const signup = async (req, res) => {
@@ -90,6 +91,7 @@ const signin = async (req, res) => {
     };
     //sending a succeeded response
     res.status(200).json({ logeduser, token, message: "succeeded" });
+
     //sending a error response
   } catch (error) {
     console.error(error);
@@ -112,7 +114,10 @@ const getAllUsers = async (req, res) => {
 
 const getOne = async (req, res) => {
   try {
-    const user = await User.findByPk(req.userId);
+    const { id } = req.params;
+    const user = await User.findByPk(id, {
+      include: Material,
+    });
     res.status(200).send(user);
   } catch (err) {
     res.status(500).send(err);

@@ -1,23 +1,24 @@
-<table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Price</th>
-        <th>Date</th>
-        <th>Link</th>
-      </tr>
-    </thead>
-    <tbody>
-      @for(e of materials ; track e.id){
-        <tr>
-          <td>{{e.name}}</td>
-          <td>{{e.description}}</td>
-          <td>{{e.price}}</td>
-          <td>{{e.date}}</td>
-          <td><a href="{{e.link}}">{{e.link}}</a></td>
-        </tr>
-      }
-    </tbody>
-  </table>
-  
+<div class="overflow-x-auto">
+<table class="w-full min-w-full divide-y divide-gray-200">
+  <thead class="bg-gray-50">
+    <tr>
+      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Description</th>
+      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Price</th>
+      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Link</th>
+    </tr>
+  </thead>
+  <tbody class="bg-white divide-y divide-gray-200">
+    @for(e of materials ; track e.id){
+    <tr class="hover:bg-gray-100">
+      <td class="px-6 py-4 whitespace-nowrap">{{e.name}}</td>
+      <td class="px-6 py-4 whitespace-nowrap">{{e.description}}</td>
+      <td class="px-6 py-4 whitespace-nowrap">{{e.price}}</td>
+      <td class="px-6 py-4 whitespace-nowrap">{{e.date}}</td>
+      <td class="px-6 py-4 whitespace-nowrap"><a href="{{e.link}}" class="text-indigo-600 hover:text-indigo-900">{{e.link}}</a></td>
+    </tr>
+    }
+  </tbody>
+</table>
+</div>

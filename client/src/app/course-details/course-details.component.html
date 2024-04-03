@@ -1,10 +1,7 @@
-<!-- navbar placeholder -->
-<nav style="height: 70px; background-color: #e2e2e2;"></nav>
-
 @defer (when (data && enrolled)) {
-<section class="course-details">
+<section class="course-details card">
     <div class="course-headers">
-        <div>
+        <div class="course-headers-info">
             <div class="course-title">{{data.name}}</div>
             <div class="course-price">{{data.price}}TND</div>
             <div class="course-date">{{data.date}}</div>
@@ -12,24 +9,37 @@
         <div class="course-action">
             @if(enrolled.result){
             <div>
-                <p>Enrooled At {{enrolled.date}}</p>
-                <a target="_blank" [href]="data.link" class="course-badge">
+                <p class="text-[16px] font-[400] text-[#616161] my-2">Enrolled Since <strong>{{enrolledDate}}</strong></p>
+                <a target="_blank" [href]="data.link" class="btn btn-sm btn-outline-primary float-end">
                     Go To Lessons
                 </a>
             </div>
             }@else {
-            <button (click)="enroll()" class="btn btn-dark">
-                Enroll
-            </button>
+            <div>
+                <button (click)="enroll()" class="btn btn-lg btn-outline-success">
+                    Enroll
+                </button>
+            </div>
             }
         </div>
     </div>
     <div class="course-body">
         {{data.description}}
-        {{data.description}}
-        {{data.description}}
-        {{data.description}}
     </div>
 
+    @if(enrolled.result){
+    <div class="card-footer flex justify-end px-3 border-0 bg-[#fafafa]">
+        <button (click)="disenroll()" class="btn btn btn-outline-danger">
+            Disenroll
+        </button>
+    </div>
+    }
+
 </section>
+} @placeholder {
+<div class="d-flex justify-content-center align-items-center h-[500px]">
+    <div class="spinner-border text-warning h-[100px] w-[100px] text-[30px]" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
 }

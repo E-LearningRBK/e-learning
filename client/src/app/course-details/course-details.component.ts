@@ -1,21 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseDetailsService } from './course-details.service';
 import { ActivatedRoute } from '@angular/router';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'course-details',
   standalone: true,
   imports: [],
+  providers: [DatePipe],
   templateUrl: './course-details.component.html',
   styleUrl: './course-details.component.css',
 })
 export class CourseDetailsComponent implements OnInit {
   materialId: any;
   constructor(
+    private datePipe: DatePipe,
     private courseDetailsService: CourseDetailsService,
     private route: ActivatedRoute
   ) {}
 
+  enrolledDate?: string | null;
   data: any;
   enrolled: any;
 
@@ -26,10 +30,16 @@ export class CourseDetailsComponent implements OnInit {
         .getCourse(this.materialId)
         .subscribe((response) => {
           this.data = response;
+
+          this.enrolledDate = this.datePipe.transform(
+            this.data.date,
+            'dd/MM/yyyy'
+          );
+          console.log(this.enrolledDate);
         });
 
       this.courseDetailsService
-        .userEnrolled(22, this.materialId)
+        .userEnrolled(this.materialId)
         .subscribe((response) => {
           this.enrolled = response;
         });
@@ -37,8 +47,15 @@ export class CourseDetailsComponent implements OnInit {
   }
 
   enroll() {
+    this.courseDetailsService.enroll(this.materialId).subscribe((response) => {
+      console.log(response);
+      window.location.reload();
+    });
+  }
+
+  disenroll() {
     this.courseDetailsService
-      .enroll(22, this.materialId)
+      .disenroll(this.materialId)
       .subscribe((response) => {
         console.log(response);
         window.location.reload();

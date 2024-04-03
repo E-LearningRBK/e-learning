@@ -12,7 +12,7 @@ router.get("/getmaterials", isUserAuthenticated, getMaterialsUser);
 
 router.get("/hasmaterial/:materialId", isUserAuthenticated, userIsEnrolled);
 
-router.get(  
+router.get(
   "/addmaterialuser/:materialId",
   isUserAuthenticated,
   addMaterialUser
