@@ -118,7 +118,23 @@ const getOne = async (req, res) => {
     const user = await User.findByPk(id, {
       include: Material,
     });
+    
     res.status(200).send(user);
+  } catch (err) {
+    res.status(500).send(err);
+  }
+};
+const getUser= async (req, res) => {
+  try {
+    const user = await User.findByPk(req.userId);
+    let logeduser = {
+      id: user.id,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      imageUrl: user.imageUrl,
+      email:user.email
+    };
+    res.status(200).send(logeduser);
   } catch (err) {
     res.status(500).send(err);
   }
@@ -127,8 +143,10 @@ const getOne = async (req, res) => {
 //updating one user
 
 const updateUser = async (req, res) => {
+  console.log(req.body);
+  console.log(req.files[0]);
   try {
-    const { firstName, lastName, imageUrl, currentPassword, newPassword } =
+    const { firstName, lastName, imageUrl,currentPassword, newPassword } =
       req.body;
     let user = await User.findByPk(req.userId);
 
@@ -141,9 +159,15 @@ const updateUser = async (req, res) => {
     if (lastName) {
       user.lastName = lastName;
     }
-    const imageBuffer = req.files[0].buffer;
-    const url = await upload(imageBuffer);
-    user.imageUrl = url;
+    if(req.files[0]){
+      const imageBuffer = req.files[0].buffer;
+      const url = await upload(imageBuffer);
+      user.imageUrl = url;
+    }
+    else{
+      user.imageUrl=imageUrl
+    }
+   
     if (currentPassword && newPassword) {
       const passwordMatch = await bcrypt.compare(
         currentPassword,
@@ -189,4 +213,5 @@ module.exports = {
   getAllUsers,
   updateUser,
   getOne,
+  getUser
 };
