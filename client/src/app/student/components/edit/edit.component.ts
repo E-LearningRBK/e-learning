@@ -38,14 +38,24 @@ export class EditComponent implements OnInit {
       this.form.firstName = this.data.firstName;
       this.form.lastName = this.data.lastName;
       this.form.email = this.data.email;
-      this.form.imageUrl = this.data.imageUrl;
+      this.form.imageUrl = this.image = this.data.imageUrl;
     });
   }
 
   onFileSelected(e: any) {
     const file: File = e.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = (event: any) => {
+      const dataURL = event.target.result;
+      // Here, dataURL will contain the base64 representation of the file's contents
+      console.log(dataURL);
+      this.image = dataURL;
+    };
+
+    reader.readAsDataURL(file);
+
     this.form.imageUrl = file;
-    this.image = URL.createObjectURL(file);
   }
 
   onSubmit() {
@@ -57,10 +67,10 @@ export class EditComponent implements OnInit {
     formData.append('email', this.form.email);
     formData.append('password', this.form.password);
     formData.append('newPassword', this.form.newPassword);
-    
+
     this.editService.update(formData).subscribe((res) => {
       console.log(res);
-      window.location.reload()
+      window.location.reload();
     });
   }
 }
