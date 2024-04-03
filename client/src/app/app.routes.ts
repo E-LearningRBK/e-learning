@@ -19,13 +19,18 @@ import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
   // Welcome Route
-  { path: '', component: WelcomeComponent },
+  {
+    path: '',
+    component: IndexComponent,
+    children: [{ path: '', component: WelcomeComponent }],
+  },
   // User Routes
   {
     path: '',
     component: IndexComponent,
     canActivate: [authGuard],
     children: [
+      { path: '', component: WelcomeComponent },
       { path: 'home', component: HomeComponent }, // "HomeComponent" user for user
       {
         path: 'course',
@@ -51,7 +56,10 @@ export const routes: Routes = [
       { path: 'AllUsersForAdmin', component: AllUsersForAdminComponent },
       { path: 'AllCoursesForAdmin', component: AllCoursesForAdminComponent },
       { path: 'studentDetail/:id', component: StudentDetailComponent },
-      {path : "updateMatForAdmin/:id" , component : UpdateCourseForAdminComponent}
+      {
+        path: 'updateMatForAdmin/:id',
+        component: UpdateCourseForAdminComponent,
+      },
     ],
   },
 ];
