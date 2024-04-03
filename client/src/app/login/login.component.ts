@@ -28,7 +28,7 @@ export class LoginComponent {
           console.log(res);
           localStorage.setItem('token', res.token);
           if (res.logeduser.role === 'admin') {
-            this.router.navigate(['/adminHome']);
+            this.router.navigate(['/admin']);
           } else {
             this.router.navigate(['/my-courses']);
           }
