@@ -1,6 +1,6 @@
 const Material = require("../model/material.model");
 const User = require("../model/user.model");
-
+const { Sequelize, DataTypes } = require("sequelize");
 module.exports = {
   //admin/user
   getMaterialsUser: async (req, res) => {
@@ -29,7 +29,7 @@ module.exports = {
         includes: { association: "UserMaterial" },
       });
 
-      // conditional response to see if user is enrolled
+      // conditional respone to see if user is enrolled
 
       if (result[0]) {
         res.send({ result: true, date: result[0].UserMaterial.createdAt });
@@ -67,6 +67,32 @@ module.exports = {
     } catch (err) {
       console.log(err);
       res.status(404).send(err);
+    }
+  },
+
+  getMaterialWithNumStudents: async (req, res) => {
+    try {
+      const topMaterial = await Material.findAll({
+        attributes: [
+          "id",
+          "name",
+          [Sequelize.fn("COUNT", Sequelize.col("Users.id")), "userCount"],
+        ],
+        include: [
+          {
+            model: User,
+            as: "Users",
+            attributes: ["id"],
+          },
+        ],
+        group: ["Users.id", "Material.id"],
+        // order: [[Sequelize.literal("enrolledStudents"), "DESC"]],
+      });
+
+      res.send(topMaterial);
+    } catch (err) {
+      console.error("Error fetching top material:", err);
+      res.status(500).send("Internal Server Error");
     }
   },
 };
