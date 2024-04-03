@@ -13,7 +13,7 @@ export class AdminMaterialServiceService {
   getAllMaterials(): Observable<Material[]> {
     return this.http.get<Material[]>(`${this.baseUrlForMat}/getAll`);
   }
-  updateMat(id: any): Observable<Material[]> {
-    return this.http.put<Material[]>(`${this.baseUrlForMat}/update/${id}`,{});
+  updateMat(id: any, updatedMaterial: Material): Observable<Material> {
+    return this.http.put<Material>(`${this.baseUrlForMat}/update/${id}`, updatedMaterial);
   }
 }
