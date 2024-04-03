@@ -11,7 +11,7 @@ router.get("/getOne/:id", getOne)
 
 router.get("/getsearched/:searched",getsearched)
 
-router.post("/add",isAdminAuthenticated, createMaterial)
+router.post("/add",isAdminAuthenticated,createMaterial)
 
 router.put("/update/:id",/*isAdminAuthenticated ,*/ updateMaterial)
 
