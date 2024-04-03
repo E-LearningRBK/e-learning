@@ -16,9 +16,13 @@ export class homeComponent {
   materials: Material[]=[];
   constructor(private AdminUserServiceService: AdminUserServiceService,private AdminMaterialServiceService:AdminMaterialServiceService) {}
   users: users[] = [];
+  userCount: any;
   ngOnInit(): void {
     this.fetchUsers();
     this.fetchMaterials()
+   
+
+    this.fetchstatic()
   }
   fetchUsers(): void {
     this.AdminUserServiceService.getAllUsers().subscribe((users) => {
@@ -29,5 +33,10 @@ export class homeComponent {
     this.AdminMaterialServiceService.getAllMaterials().subscribe((materials) => {
       this.materials = materials;
     });
+  }
+fetchstatic():void{
+  this.AdminMaterialServiceService.getUsersCount().subscribe((userCount) => {
+    this.userCount = userCount;
+  });
 }
 }

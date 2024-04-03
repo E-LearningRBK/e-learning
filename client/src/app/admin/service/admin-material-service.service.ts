@@ -16,4 +16,7 @@ export class AdminMaterialServiceService {
   updateMat(id: any): Observable<Material[]> {
     return this.http.put<Material[]>(`${this.baseUrlForMat}/update/${id}`,{});
   }
+  getUsersCount():Observable<any>{
+    return this.http.get<Material>(`http://127.0.0.1:3000/api/student/getAllMaterialUser`);
+  }
 }
