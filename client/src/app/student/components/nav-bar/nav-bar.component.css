@@ -1,5 +1,5 @@
 .nav {
-  @apply flex gap-6 bg-[#f5f5f5] shadow p-[4px];
+  @apply flex gap-6 bg-[#f8f8f8] shadow p-[4px] select-none;
 }
 
 .nav-header {
