@@ -4,6 +4,7 @@ const jwt = require("jsonwebtoken");
 
 const { upload, getRandomString } = require("../helper/helperFunction.js");
 const Material = require("../model/material.model.js");
+
 // const { sendConfirmation } = require("../utils/sendEmail.js");
 
 const signup = async (req, res) => {
@@ -88,6 +89,7 @@ const signin = async (req, res) => {
       lastName: user.lastName,
       imageUrl: user.imageUrl,
       role: user.role,
+      password: user.password,
     };
     //sending a succeeded response
     res.status(200).json({ logeduser, token, message: "succeeded" });
@@ -118,13 +120,13 @@ const getOne = async (req, res) => {
     const user = await User.findByPk(id, {
       include: Material,
     });
-    
+
     res.status(200).send(user);
   } catch (err) {
     res.status(500).send(err);
   }
 };
-const getUser= async (req, res) => {
+const getUser = async (req, res) => {
   try {
     const user = await User.findByPk(req.userId);
     let logeduser = {
@@ -132,7 +134,8 @@ const getUser= async (req, res) => {
       firstName: user.firstName,
       lastName: user.lastName,
       imageUrl: user.imageUrl,
-      email:user.email
+      email: user.email,
+      password: user.password,
     };
     res.status(200).send(logeduser);
   } catch (err) {
@@ -143,12 +146,11 @@ const getUser= async (req, res) => {
 //updating one user
 
 const updateUser = async (req, res) => {
-  console.log(req.body);
-  console.log(req.files[0]);
   try {
-    const { firstName, lastName, imageUrl,currentPassword, newPassword } =
-      req.body;
+    const { firstName, lastName, imageUrl, password, newPassword } = req.body;
+
     let user = await User.findByPk(req.userId);
+    console.log(user);
 
     if (!user) {
       return res.status(404).json({ error: "User not found." });
@@ -159,20 +161,17 @@ const updateUser = async (req, res) => {
     if (lastName) {
       user.lastName = lastName;
     }
-    if(req.files[0]){
+    if (req.files[0]) {
       const imageBuffer = req.files[0].buffer;
       const url = await upload(imageBuffer);
       user.imageUrl = url;
+    } else {
+      user.imageUrl = imageUrl;
     }
-    else{
-      user.imageUrl=imageUrl
-    }
-   
-    if (currentPassword && newPassword) {
-      const passwordMatch = await bcrypt.compare(
-        currentPassword,
-        user.password
-      );
+
+    if (password && newPassword) {
+      const passwordMatch = await bcrypt.compare(password, user.password);
+
       if (!passwordMatch) {
         return res
           .status(401)
@@ -213,5 +212,5 @@ module.exports = {
   getAllUsers,
   updateUser,
   getOne,
-  getUser
+  getUser,
 };
