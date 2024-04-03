@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import{MatService}from '../../service/mat.service'
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AdminMaterialServiceService } from '../../service/admin-material-service.service';
 
 @Component({
   selector: 'create-course',
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrl: './create-course.component.css'
 })
 export class CreateCourseComponent {
-  constructor(private MatService:MatService,private router: Router){}
+  constructor(private MatService:AdminMaterialServiceService,private router: Router){}
   form: any = {
     name: null,
     description: null,
