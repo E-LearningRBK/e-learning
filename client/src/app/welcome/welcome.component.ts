@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { NavBarComponent } from '../student/components/nav-bar/nav-bar.component';
 @Component({
   selector: 'app-welcome',
   standalone: true,
-  imports: [],
+  imports: [NavBarComponent],
   templateUrl: './welcome.component.html',
   styleUrl: './welcome.component.css'
 })
@@ -11,7 +12,7 @@ export class WelcomeComponent {
   pageTitle: string = "Corporate & Business Site";
   pageDescription: string = "We are a digital agency that helps brands to achieve their business outcomes. We see technology as a tool to create amazing things.";
   buttonText: string = "Get Started";
-  heroImageUrl: string = "img here";
+  heroImageUrl: string = "https://img.freepik.com/photos-gratuite/apprentissage-idees-education-insight-intelligence-study-concept_53876-120116.jpg?t=st=1712170084~exp=1712170684~hmac=e3129b7113c8810514ef188e1538b5ac07a525289ce1d61fb427c6d556f2ecaf";
 
   constructor(
     

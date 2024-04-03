@@ -1,21 +1,4 @@
-/* Header Content */
-.header-content {
-    padding: 20px;
-  }
-  
-  .header-content h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-  
-  .header-content p {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 1rem;
-  }
-  
-  /* Button */
+
   .button {
     margin-top: 1rem;
   }
@@ -32,47 +15,3 @@
   .button .btn:hover {
     background-color: #0056b3;
   }
-  
-  /* Header Image */
-  .header-image img {
-    width: 100%;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Widget */
-  .widget-container {
-    width: 100%;
-    max-width: 360px; /* Adjust width as needed */
-    margin-bottom: 20px;
-  }
-  
-  .widget {
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .widget h2 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .widget p {
-    font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 10px;
-  }
-  
-  .widget a {
-    color: #007bff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .widget a:hover {
-    color: #0056b3;
-  }
-  
