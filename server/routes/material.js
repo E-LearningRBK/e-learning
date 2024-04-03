@@ -13,7 +13,7 @@ router.get("/getsearched/:searched",getsearched)
 
 router.post("/add",isAdminAuthenticated, createMaterial)
 
-router.put("/update/:id",isAdminAuthenticated, updateMaterial)
+router.put("/update/:id",/*isAdminAuthenticated ,*/ updateMaterial)
 
 router.delete("/delete/:id",isAdminAuthenticated, deleteMaterial)
 

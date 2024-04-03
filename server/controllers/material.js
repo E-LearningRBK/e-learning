@@ -26,11 +26,11 @@ module.exports = {
     try {
       const { name, description, price, date, link } = req.body;
       const result = await Material.create({
-        name,
-        description,
-        price,
-        date,
-        link,
+        name: name,
+        description: description,
+        price: price,
+        date: date,
+        link: link,
       });
       res.status(201).json(result);
     } catch (err) {
@@ -41,9 +41,19 @@ module.exports = {
   updateMaterial: async (req, res) => {
     try {
       const { id } = req.params;
-      const result = await Material.update(req.body, { where: { id: id } });
+      const { name, description, price, date, link } = req.body;
+      const result = await Material.update(
+        {
+          name: name,
+          description: description,
+          price: price,
+          date: date,
+          link: link,
+        },
+        { where: { id: id } }
+      );
 
-      res.status(202).json(req.body);
+      res.status(202).json(result);
     } catch (err) {
       res.status(404).send(err);
     }
