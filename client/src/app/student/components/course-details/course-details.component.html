@@ -10,13 +10,13 @@
             @if(enrolled.result){
             <div>
                 <p class="text-[16px] font-[400] text-[#616161] my-2">Enrolled Since <strong>{{enrolledDate}}</strong></p>
-                <a target="_blank" [href]="data.link" class="btn btn-sm btn-outline-primary float-end">
+                <a target="_blank" [href]="data.link" class="shadow-sm btn btn btn-outline-primary float-end">
                     Go To Lessons
                 </a>
             </div>
             }@else {
             <div>
-                <button (click)="enroll()" class="btn btn-lg btn-outline-success">
+                <button (click)="enroll()" class="shadow-sm btn btn-lg btn-outline-success">
                     Enroll
                 </button>
             </div>
@@ -28,8 +28,8 @@
     </div>
 
     @if(enrolled.result){
-    <div class="card-footer flex justify-end px-3 border-0 bg-[#fafafa]">
-        <button (click)="disenroll()" class="btn btn btn-outline-danger">
+    <div class="card-footer flex justify-end px-3 border-0 bg-[#f9f9f9]">
+        <button (click)="disenroll()" class="shadow-sm btn btn btn-outline-danger">
             Disenroll
         </button>
     </div>
@@ -38,8 +38,7 @@
 </section>
 } @placeholder {
 <div class="d-flex justify-content-center align-items-center h-[500px]">
-    <div class="spinner-border text-warning h-[100px] w-[100px] text-[30px]" role="status">
-        <span class="visually-hidden">Loading...</span>
+    <div class="spinner-border text-[#109384] h-[100px] w-[100px] text-[30px]" role="status">
     </div>
 </div>
 }
