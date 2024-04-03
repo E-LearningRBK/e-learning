@@ -8,11 +8,11 @@ const {
   userIsEnrolled,
 } = require("../controllers/stud_material.js");
 
-router.get("/getmaterials/:id"/*, isUserAuthenticated*/, getMaterialsUser);
+router.get("/getmaterials", isUserAuthenticated, getMaterialsUser);
 
 router.get("/hasmaterial/:materialId", isUserAuthenticated, userIsEnrolled);
 
-router.get(  
+router.get(
   "/addmaterialuser/:materialId",
   isUserAuthenticated,
   addMaterialUser
