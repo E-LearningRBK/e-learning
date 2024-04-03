@@ -17,6 +17,6 @@ export class NavBarComponent {
   ) {}
   navigateToWelc(): void {
     
-    this.router.navigate(['/welcome']);
+    this.router.navigate(['/']);
   }
 }
