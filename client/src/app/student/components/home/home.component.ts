@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AppComponent } from '../app.component';
+import { AppComponent } from '../../../app.component';
 import { Material } from '../courses/courses.model';
-import {HomeService} from '../home/home.service'
+import {HomeService} from './home.service'
 @Component({
   selector: 'app-home',
   standalone: true,
