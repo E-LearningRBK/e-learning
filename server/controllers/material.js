@@ -24,14 +24,8 @@ module.exports = {
   //admin
   createMaterial: async (req, res) => {
     try {
-      const { name, description, price, date, link } = req.body;
-      const result = await Material.create({
-        name: name,
-        description: description,
-        price: price,
-        date: date,
-        link: link,
-      });
+      const result = await Material.create(req.body.form);
+      console.log(result);
       res.status(201).json(result);
     } catch (err) {
       res.status(404).send(err);
