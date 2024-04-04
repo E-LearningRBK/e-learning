@@ -1,5 +1,5 @@
 <div class="flex justify-center items-center h-screen">
-  <div  class="max-w-xl w-full mx-auto p-8 bg-white shadow-lg border border-solid border-gray-300 rounded-md">
+  <div  class="max-w-xl w-full mx-auto p-8 bg-white shadow-md border border-solid border-gray-300 rounded-md">
     <h2 class="text-3xl font-bold mb-8 text-center text-gray-700">Login</h2>
 
     <form (ngSubmit)="onSubmit()" class="space-y-6">
@@ -26,13 +26,13 @@
           [(ngModel)]="form.password"
           name="password"
           minlength="8"
-          class="bg-indigo-50 border border-indigo-150 text-indigo-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5"
+          class="bg-indigo-50 border border-indigo-150 text-slate-500 text-sm rounded-lg focus:ring-slate-500 focus:border-indigo- block w-full p-2.5"
         />
       </div>
 
       <button
         type="submit"
-        class="block w-full py-2 text-xl text-gray-800 bg-slate-100 from-eb81e8 to-109384 rounded-md hover:from-eb81e8 hover:to-109384 transition duration-300 shadow-md cursor-pointer mt-6"
+        class="block w-full py-2 text-xl text-gray-800     rounded-md hover:from-eb81e8 hover:to-109384 transition duration-300 shadow-md cursor-pointer mt-6 card-footer  justify-end px-3 btn-action "
       >
         Login
       </button>

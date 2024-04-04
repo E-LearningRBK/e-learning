@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../Services/auth.service';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private route :Router) {}
   hide = true;
   form: any = {
     email: null,
@@ -20,5 +21,6 @@ export class LoginComponent {
   onSubmit(): void {
     const { email, password } = this.form;
     this.authService.login(email, password)
+    this.route.navigate(['/home'])
   }
 }
