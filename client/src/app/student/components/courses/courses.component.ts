@@ -45,7 +45,7 @@ export class courses implements OnInit {
     });
   }
 
-  pageSize: number = 10;
+  pageSize: number = 9;
   currentPage: number = 1;
   totalPages: number = 1;
 

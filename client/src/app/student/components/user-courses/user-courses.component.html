@@ -1,7 +1,3 @@
-<search-bar>
-
-</search-bar>
-
 <div class='container'>
   <table>
     <thead>
@@ -20,7 +16,7 @@
         <td>{{ material.price }}</td>
         <td>{{ material.date }}</td>
         <td><a [href]="material.link">Link To Course</a></td>
-        <td><button (click)="disenroll(material.id)" class="btn">Disenroll</button></td>
+        <td><button (click)="disenroll(material.id)" class="btn btn-outline-danger">Disenroll</button></td>
       </tr>
       }
     </tbody>
