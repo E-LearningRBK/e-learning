@@ -29,6 +29,7 @@ export class courses implements OnInit {
   fetchMaterials(): void {
     this.materialService.getAllMaterials().subscribe((materials) => {
       this.materials = materials;
+      this.totalPages = Math.ceil(this.materials.length / this.pageSize);
     });
   }
 
@@ -42,5 +43,19 @@ export class courses implements OnInit {
       console.log(response);
       window.location.reload();
     });
+  }
+
+  pageSize: number = 10;
+  currentPage: number = 1;
+  totalPages: number = 1;
+
+  onPageChange(page: number): void {
+    this.currentPage = page;
+  }
+
+  getpagMat(): Material[] {
+    const startIndex = (this.currentPage - 1) * this.pageSize;
+    const endIndex = startIndex + this.pageSize;
+    return this.materials.slice(startIndex, endIndex);
   }
 }

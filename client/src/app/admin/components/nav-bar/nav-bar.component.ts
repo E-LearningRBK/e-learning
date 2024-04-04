@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { DropAdminComponent } from '../drop-admin/drop-admin.component';
 
 @Component({
   selector: 'app-nav-bar-admin',
   standalone: true,
-  imports: [],
+  imports: [DropAdminComponent],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css'
 })
