@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MaterialService } from './courses.service';
 import { Material } from './courses.model';
 import { AppComponent } from '../../../app.component';
-import { Router } from '@angular/router';
+import {  Router } from '@angular/router';
 import { SearchBarComponent } from '../search-bar/search-bar.component';
 import { CourseDetailsService } from '../course-details/course-details.service';
 
@@ -14,7 +14,9 @@ import { CourseDetailsService } from '../course-details/course-details.service';
   imports: [AppComponent, SearchBarComponent],
 })
 export class courses implements OnInit {
+
   materials: Material[] = [];
+  isModalOpen: boolean=false;
 
   constructor(
     private courseService: CourseDetailsService,
@@ -43,4 +45,18 @@ export class courses implements OnInit {
       window.location.reload();
     });
   }
+
+  renavigate(id: number) {
+    this.router.navigate(['/course', id]);
+  }
+  paymentReDirection(material:Material){
+    this.materialService.paymentDirection(material.price).subscribe((response) => {
+      // alert(response.result.link)
+    });
+  } 
+  toggleModal() {
+    return this.isModalOpen=!this.isModalOpen
+   }
+   
 }
+
