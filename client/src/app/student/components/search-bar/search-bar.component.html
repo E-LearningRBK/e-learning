@@ -1,11 +1,5 @@
 <div class="search-container">
-  <input
-    type="text"
-    name="search-box"
-    class="search-box"
-    (keyup)="sendData($event)"
-  />
-
+  <input type="text" name="search-box" class="search-box form-control" placeholder="Search..." (keyup)="sendData($event)" />
 
   <section class="search-result" *ngIf="sec && materials.length > 0">
     @for (material of materials; track $index){
@@ -17,5 +11,5 @@
     <p>Sorry . nothing found!!</p>
     }
   </section>
-  
+
 </div>
