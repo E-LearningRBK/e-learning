@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AdminMaterialServiceService } from '../../service/admin-material-service.service';
+import { AllCoursesForAdminComponent } from '../all-courses-for-admin/all-courses-for-admin.component';
 
 @Component({
   selector: 'create-course',
@@ -11,7 +12,7 @@ import { AdminMaterialServiceService } from '../../service/admin-material-servic
   styleUrl: './create-course.component.css'
 })
 export class CreateCourseComponent {
-  constructor(private MatService:AdminMaterialServiceService,private router: Router){}
+  constructor(private MatService:AdminMaterialServiceService,private router: Router, private inheritFetch : AllCoursesForAdminComponent){}
   form: any = {
     name: null,
     description: null,
@@ -29,7 +30,7 @@ export class CreateCourseComponent {
           this.toggleModal()
           alert('created sucssefully')
           this.router.navigate(['/admin/AllCoursesForAdmin']);
-
+          this.inheritFetch.fetchMaterials() //  inherit the fetchMaterials() from class AllCoursesForAdminComponent to fetch data after create ;)
         };
         
       });
