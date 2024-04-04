@@ -16,12 +16,11 @@
               style="display: none"
             />
             <img
-            
-            [src]="image"
+              [src]="image"
               alt=""
               (click)="fileInput.click()"
               style="cursor: pointer"
-              class="w-40 h-40 p-1 rounded-full ring-2 ring-indigo-300 dark:ring-indigo-500 object-cover cursor-pointer"
+              class="w-40 h-40 p-1 rounded-full ring-2 ring-indigo-300 dark:ring-[#ece1bf] object-cover cursor-pointer"
             />
             <span
               class="absolute bottom-0 right-0 bg-gray-300 px-2 py-1 rounded-full text-xs cursor-pointer"
@@ -36,7 +35,7 @@
         <div>
           <label
             for="first_name"
-            class="block text-sm font-medium text-gray-700"
+            class="block text-sm font-medium text-blue-950"
             >Your First Name</label
           >
           <input
@@ -46,11 +45,11 @@
             required
             name="firstName"
             [(ngModel)]="form.firstName"
-            class="bg-indigo-50 border border-indigo-150 text-indigo-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5"
+            class="bg-indigo-50 border border-indigo-150 text-gray-600 text-sm rounded-lg focus:ring-slate-500 block w-full p-2.5"
           />
         </div>
         <div>
-          <label for="last_name" class="block text-sm font-medium text-gray-700"
+          <label for="last_name" class="block text-sm font-medium text-blue-950"
             >Your Last Name</label
           >
           <input
@@ -60,23 +59,23 @@
             required
             name="lastName"
             [(ngModel)]="form.lastName"
-            class="bg-indigo-50 border border-indigo-150 text-indigo-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5"
+            class="bg-indigo-50 border border-indigo-150 text-gray-600 text-sm rounded-lg focus:ring-slate-500 block w-full p-2.5"
           />
         </div>
       </div>
 
       <div class="mb-2 sm:mb-6">
-        <label for="email" class="block text-sm font-medium text-gray-700"
+        <label for="email" class="block text-sm font-medium text-blue-950"
           >Your Email</label
         >
         <input
           type="email"
           id="email"
-          placeholder="Your Email"  
+          placeholder="Your Email"
           required
           name="email"
           [(ngModel)]="form.email"
-          class="bg-indigo-50 border border-indigo-300 text-indigo-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5"
+          class="bg-indigo-50 border border-indigo-150 text-gray-600 text-sm rounded-lg focus:ring-slate-500 block w-full p-2.5"
         />
       </div>
 
@@ -84,7 +83,7 @@
         <div>
           <label
             for="current_password"
-            class="block text-sm font-medium text-gray-700"
+            class="block text-sm font-medium text-blue-950"
             >Current Password</label
           >
           <input
@@ -94,13 +93,13 @@
             required
             name="currentPassword"
             [(ngModel)]="form.password"
-            class="bg-indigo-50 border border-indigo-150 text-indigo-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5"
+            class="bg-indigo-50 border border-indigo-150 text-gray-600 text-sm rounded-lg focus:ring-slate-500 block w-full p-2.5"
           />
         </div>
         <div>
           <label
             for="new_password"
-            class="block text-sm font-medium text-gray-700"
+            class="block text-sm font-medium text-blue-950"
             >New Password</label
           >
           <input
@@ -110,7 +109,7 @@
             required
             name="newPassword"
             [(ngModel)]="form.newPassword"
-            class="bg-indigo-50 border border-indigo-150 text-indigo-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5"
+            class="bg-indigo-50 border border-indigo-150 text-gray-600 text-sm rounded-lg focus:ring-slate-500 block w-full p-2.5"
           />
         </div>
       </div>
@@ -118,7 +117,7 @@
       <div class="flex justify-end">
         <button
           type="submit"
-          class="text-white bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm py-2 px-4"
+          class="btn-action font-medium rounded-lg text-sm py-2 px-4"
         >
           Save
         </button>
