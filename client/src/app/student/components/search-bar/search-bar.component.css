@@ -2,7 +2,7 @@
   @apply bg-[#f9f9f9] relative p-2 border border-[#0c6e629c] rounded shadow-sm;
 }
 .search-box {
-  border: #858585 solid ;
+  border-color: #adadad;
   border-radius: 5px;
   height: 30px;
   padding: 15px 10px;
