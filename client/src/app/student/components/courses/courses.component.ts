@@ -3,19 +3,21 @@ import { MaterialService } from './courses.service';
 import { Material } from './courses.model';
 import { AppComponent } from '../../../app.component';
 import { Router } from '@angular/router';
-import { SearchBarComponent } from "../search-bar/search-bar.component";
+import { SearchBarComponent } from '../search-bar/search-bar.component';
+import { CourseDetailsService } from '../course-details/course-details.service';
 
 @Component({
-    selector: 'app-material-list',
-    templateUrl: './courses.component.html',
-    styleUrls: ['./courses.component.css'],
-    standalone: true,
-    imports: [AppComponent, SearchBarComponent]
+  selector: 'app-material-list',
+  templateUrl: './courses.component.html',
+  styleUrls: ['./courses.component.css'],
+  standalone: true,
+  imports: [AppComponent, SearchBarComponent],
 })
 export class courses implements OnInit {
   materials: Material[] = [];
 
   constructor(
+    private courseService: CourseDetailsService,
     private materialService: MaterialService,
     private router: Router
   ) {}
@@ -29,8 +31,16 @@ export class courses implements OnInit {
       this.materials = materials;
     });
   }
+
   materialDetaille(material: Material): void {
     // console.log('Consulter : ', material);
     this.router.navigate(['/course', material.id]);
+  }
+
+  enroll(id?: number) {
+    this.courseService.enroll(id).subscribe((response) => {
+      console.log(response);
+      window.location.reload();
+    });
   }
 }

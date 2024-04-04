@@ -1,27 +1,29 @@
-<search-bar></search-bar>
 <div class='container'>
-  @for (material of materials; track $index) {
-  <div (click)="materialDetaille(material)" class="box-mat">
-    <div class="name">
-      {{ material.name }}
-    </div>
-    <!-- <div class="desc">
+  <search-bar></search-bar>
+  <div class='courses-container'>
+    @for (material of materials; track $index) {
+    <div (click)="materialDetaille(material)" class="box-mat">
+      <div class="name">
+        {{ material.name }}
+      </div>
+      <!-- <div class="desc">
       <h4> {{ material.description }}</h4>
     </div> -->
-    <div class="price">
-      {{ material.price }} <span class="text-[#505050]">TND</span>
-    </div>
-    <div class="date">
-      <span class="text-[15px] text-[#606060]">Starts at:</span> {{ material.date }}
-    </div>
-    <!-- <div class="link">
+      <div class="price">
+        {{ material.price }} <span class="text-[#505050]">TND</span>
+      </div>
+      <div class="date">
+        <span class="text-[15px] text-[#606060]">Starts at:</span> {{ material.date }}
+      </div>
+      <!-- <div class="link">
       <h4> <a [href]=material.link> Link To Course</a></h4>
     </div> -->
-    <div class="btn-group">
-      <div>
-        <button class="btn btn-action">Enroll</button>
+      <div class="btn-group">
+        <div>
+          <button (click)="enroll(material.id)" class="btn btn-action">Enroll</button>
+        </div>
       </div>
     </div>
+    }
   </div>
-  }
 </div>

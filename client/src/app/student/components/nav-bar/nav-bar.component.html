@@ -10,15 +10,25 @@
         Home
       </a>
     </div>
+    @if (isAuthenticated) {
     <div>
       <a class="nav-item navlink" href="/all-courses">Courses</a>
     </div>
     <div>
       <a class="nav-item navlink" href="/my-courses">My Classes</a>
     </div>
+    }@else {
+    <div>
+      <a class="nav-item navlink" href="/login">Sign In</a>
+    </div>
+    <div>
+      <a class="nav-item navlink" href="/register">Sign Up</a>
+    </div>
+    }
   </div>
-
+  @if (isAuthenticated) {
   <div class="nav-dropdown nav-item">
     <img src="../../../../assets/logo.png" (click)="navigateToWelc()" alt="Logo" width="50">
   </div>
+  }
 </nav>
