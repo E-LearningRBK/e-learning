@@ -1,0 +1,7 @@
+.btn-action {
+    @apply text-gray-800 font-[600] bg-[#FCF3D9] border-2 border-[#ece1bf] shrink;
+  }
+  
+  .btn-action:hover {
+    @apply text-[#fff] font-[600] bg-[rgb(245,222,153)] border-2 border-[#ece1bf] ;
+  }

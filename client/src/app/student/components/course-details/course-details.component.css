@@ -1,5 +1,5 @@
 .course-details {
-  @apply max-w-[1000px] p-[15px] m-[70px_auto_10px] shadow-md;
+  @apply max-w-[1000px] p-[15px] m-[70px_auto_10px] shadow-md border-2 border-[#0c6e624f];
 }
 
 .course-headers {

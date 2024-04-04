@@ -50,3 +50,12 @@
 .btn-action:hover {
   @apply text-[#fff] font-[600] bg-[#E2AE12] border-2 border-[#E2AE12];
 }
+
+.center-row {
+  display: flex;
+  justify-content: center;
+}
+
+.tools-container {
+  @apply bg-[#f9f9f986] relative p-2 border flex items-center border-[#0c6e629c] rounded shadow-sm;
+}

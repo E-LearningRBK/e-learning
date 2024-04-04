@@ -12,11 +12,11 @@ router.get('/confirm/:activationcode', verifyUser);
 router.post('/signup',signup)
 router.post('/signin',signin)
 //admin
-router.get('/getAll'/*isAdminAuthenticated*/,getAllUsers)
+router.get('/getAll',isAdminAuthenticated,getAllUsers)
 //user
 
 router.get('/getUser',isUserAuthenticated,getUser)
 router.put('/update',isUserAuthenticated, updateUser)
-router.get("/getOne/:id"/*,isUserAuthenticated*/,getOne)
+router.get("/getOne/:id",isUserAuthenticated,getOne)
 
 module.exports = router

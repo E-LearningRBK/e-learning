@@ -1,27 +1,26 @@
-<div class="nav">
-    <div class="nav-header">
-            <img src="{{ heroImageUrl }}"  alt="Logo" width="50">
+
+
+  <nav class="nav">
+    <div  class="nav-header nav-item">
+      <img src="{{ heroImageUrl }}" alt="Logo" width="50">
+      <span>E-Lyceum</span>
     </div>
-    <div class="nav-btn">
-      <input type="checkbox" id="nav-check">
-      <label for="nav-check">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
-    </div>
+  
     <div class="nav-links">
-        <a href="/admin">home</a>
+      <div>
+        <a class="nav-item navlink" href="/admin">
+          Home
+        </a>
       </div>
-      <div class="nav-links">
-        <a href="admin/AllUsersForAdmin">users</a>
+      <div>
+        <a class="nav-item navlink" href="admin/AllUsersForAdmin">Users</a>
       </div>
-      <div class="nav-links">
-        <a href="admin/AllCoursesForAdmin">Courses</a>
+      <div>
+        <a class="nav-item navlink" href="admin/AllCoursesForAdmin">Courses</a>
       </div>
-    <div class="nav-links">
-      <a href="">logout</a>
     </div>
-    
+    <div class="nav-dropdown nav-item">
+    <app-drop-admin></app-drop-admin>
   </div>
+  </nav>
 

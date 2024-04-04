@@ -21,6 +21,7 @@ export class EditComponent implements OnInit {
     imageUrl: null,
     newPassword: null,
   };
+  loader: boolean = false;
   image: string =
     'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png';
   constructor(
@@ -59,6 +60,7 @@ export class EditComponent implements OnInit {
   }
 
   onSubmit() {
+    this.loader = true;
     const formData = new FormData();
 
     formData.append('imageUrl', this.form.imageUrl);
@@ -69,6 +71,7 @@ export class EditComponent implements OnInit {
     formData.append('newPassword', this.form.newPassword);
 
     this.editService.update(formData).subscribe((res) => {
+      this.loader = false;
       console.log(res);
       window.location.reload();
     });

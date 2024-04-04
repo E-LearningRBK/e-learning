@@ -1,17 +1,14 @@
+img.vert-move {
+  -webkit-animation: mover 3s linear infinite  alternate;
+  animation: mover 3s linear infinite  alternate;
+}
 
-  .button {
-    margin-top: 1rem;
-  }
-  
-  .button .btn {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .button .btn:hover {
-    background-color: #0056b3;
-  }
+@-webkit-keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+@keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}

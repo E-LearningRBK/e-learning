@@ -23,7 +23,7 @@ export class AuthService {
         next: (res: any) => {
           if (res) {
             alert('successfully logged in');
-            console.log(res);
+            
             localStorage.setItem('token', res.token);
             this.isAuthenticated = true;
             if (res.logeduser.role === 'admin') {
