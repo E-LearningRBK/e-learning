@@ -13,6 +13,9 @@ import { CreateCourseComponent } from '../create-course/create-course.component'
 })
 export class AllCoursesForAdminComponent implements OnInit {
   materials: Material[] = [];
+  pageSize: number = 10;
+  currentPage: number = 1;
+  totalPages: number = 1;
 
   constructor(
     private AdminMaterialServiceService: AdminMaterialServiceService,
@@ -24,9 +27,12 @@ export class AllCoursesForAdminComponent implements OnInit {
     this.fetchMaterials();
   }
 
+
+
   fetchMaterials(): void {
     this.AdminMaterialServiceService.getAllMaterials().subscribe((materials) => {
       this.materials = materials;
+      this.totalPages = Math.ceil(this.materials.length / this.pageSize);
     });
   }
 
@@ -42,6 +48,20 @@ export class AllCoursesForAdminComponent implements OnInit {
 
 })
   }
+
   
 
+  onPageChange(page: number): void {
+    this.currentPage = page;
+  }
+
+  getPagMat(): Material[] {
+    const startIndex = (this.currentPage - 1) * this.pageSize;
+    const endIndex = startIndex + this.pageSize;
+    return this.materials.slice(startIndex, endIndex);
+  }
+  
 }
+  
+
+
