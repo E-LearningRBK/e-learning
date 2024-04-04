@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './nav-bar.component.css'
 })
 export class navBarComponent {
-  heroImageUrl: string = "../assets/image.png";
+  heroImageUrl: string = "../../../../assets/logo.png";
 }
