@@ -9,24 +9,16 @@ import { NavBarComponent } from '../student/components/nav-bar/nav-bar.component
   styleUrl: './welcome.component.css'
 })
 export class WelcomeComponent {
-  pageTitle: string = "Corporate & Business Site";
-  pageDescription: string = "We are a digital agency that helps brands to achieve their business outcomes. We see technology as a tool to create amazing things.";
-  buttonText: string = "Get Started";
-  heroImageUrl: string = "https://img.freepik.com/photos-gratuite/apprentissage-idees-education-insight-intelligence-study-concept_53876-120116.jpg?t=st=1712170084~exp=1712170684~hmac=e3129b7113c8810514ef188e1538b5ac07a525289ce1d61fb427c6d556f2ecaf";
-
+image="https://cdn.discordapp.com/attachments/1186419023290826803/1225490272272646164/411064-PDFYPJ-619-removebg_1.png?ex=662151c1&is=660edcc1&hm=3f0c3b81b956f0c921078907abe78bfb40027a6d5c428ae0ddbce2153a53be89&"
   constructor(
     
     private router: Router
   ) {}
-  widgets = [
-    { title: 'Widget 1', link :"link here", content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-    { title: 'Widget 2',link :"link here", content: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' },
-    { title: 'Widget 3',link :"link here", content: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi .' }
-  ];
 
 
-  navigateToHome(): void {
+
+  navigateToLogin(): void {
     
-    this.router.navigate(['/home']);
+    this.router.navigate(['/login']);
   }
 }
