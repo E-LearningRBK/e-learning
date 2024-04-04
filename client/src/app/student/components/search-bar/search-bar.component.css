@@ -21,6 +21,7 @@
   /* margin: 20px auto 0 auto; */
   max-height: 300px;
   overflow-y: scroll;
+  overscroll-behavior-y: contain;
   background-color: #fff;
   padding: 10px;
   border-radius: 5px;
