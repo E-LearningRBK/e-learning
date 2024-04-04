@@ -13,16 +13,19 @@ import { Material } from '../../model/courses.model';
   styleUrl: './home.component.css',
 })
 export class homeComponent {
-  materials: Material[]=[];
-  constructor(private AdminUserServiceService: AdminUserServiceService,private AdminMaterialServiceService:AdminMaterialServiceService) {}
+  [x: string]: any;
+  materials: Material[] = [];
+  constructor(
+    private AdminUserServiceService: AdminUserServiceService,
+    private AdminMaterialServiceService: AdminMaterialServiceService
+  ) {}
   users: users[] = [];
   userCount: any;
   ngOnInit(): void {
     this.fetchUsers();
-    this.fetchMaterials()
-   
+    this.fetchMaterials();
 
-    this.fetchstatic()
+    this.fetchstatic();
   }
   fetchUsers(): void {
     this.AdminUserServiceService.getAllUsers().subscribe((users) => {
@@ -30,13 +33,25 @@ export class homeComponent {
     });
   }
   fetchMaterials(): void {
-    this.AdminMaterialServiceService.getAllMaterials().subscribe((materials) => {
-      this.materials = materials;
+    this.AdminMaterialServiceService.getAllMaterials().subscribe(
+      (materials) => {
+        this.materials = materials;
+      }
+    );
+  }
+  fetchstatic(): void {
+    this.AdminMaterialServiceService.getUsersCount().subscribe((userCount) => {
+      this.userCount = userCount;
+      const sortedArr = this.userCount.sort(
+        (a: any, b: any) => b.Users.length - a.Users.length
+      );
+      const top5 = sortedArr.slice(0, 5);
+      this.userCount = top5;
     });
   }
-fetchstatic():void{
-  this.AdminMaterialServiceService.getUsersCount().subscribe((userCount) => {
-    this.userCount = userCount;
-  });
-}
+  getFormattedWidth(usersArray: any[]): string {
+    const percentageWidth = (usersArray.length * 100) / this.users.length;
+    console.log(percentageWidth.toFixed(2));
+    return percentageWidth.toFixed(2);
+  }
 }

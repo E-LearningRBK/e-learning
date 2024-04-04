@@ -31,55 +31,58 @@
   <a
     href="#"
     class="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline"
-    >5 star</a
+    >{{userCount[0].name}}</a
   >
   <div class="w-2/4 h-5 mx-4 bg-gray-200 rounded dark:bg-gray-700">
-    <div class="h-5 bg-blue-300 rounded" style="width: 70%"></div>
+    <div class="h-5 bg-blue-300 rounded" [style.width.%]="(userCount[0].Users.length * 100) / users.length"></div>
   </div>
-  <span class="text-sm font-medium text-gray-500 dark:text-gray-400">70%</span>
+  <span class="text-sm font-medium text-gray-500 dark:text-gray-400"> {{getFormattedWidth(userCount[0].Users)}} %</span>
 </div>
 <div class="flex items-center mt-4">
   <a
     href="#"
     class="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline"
-    >4 star</a
+    >{{userCount[1].name}}</a
   >
   <div class="w-2/4 h-5 mx-4 bg-gray-200 rounded dark:bg-gray-700">
-    <div class="h-5 bg-blue-300 rounded" style="width: 17%"></div>
+    <div class="h-5 bg-blue-300 rounded" [style.width.%]="(userCount[1].Users.length * 100) / users.length"></div>
   </div>
-  <span class="text-sm font-medium text-gray-500 dark:text-gray-400">17%</span>
+  <span class="text-sm font-medium text-gray-500 dark:text-gray-400">{{getFormattedWidth(userCount[1].Users)}}%</span>
 </div>
 <div class="flex items-center mt-4">
   <a
     href="#"
     class="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline"
-    >3 star</a
+    >{{userCount[2].name}}</a
   >
   <div class="w-2/4 h-5 mx-4 bg-gray-200 rounded dark:bg-gray-700">
-    <div class="h-5 bg-blue-300 rounded" style="width: 8%"></div>
+    <div class="h-5 bg-blue-300 rounded" [style.width.%]="(userCount[2].Users.length * 100) / users.length"></div>
+
   </div>
-  <span class="text-sm font-medium text-gray-500 dark:text-gray-400">8%</span>
+  <span class="text-sm font-medium text-gray-500 dark:text-gray-400">{{getFormattedWidth(userCount[2].Users)}}%</span>
 </div>
 <div class="flex items-center mt-4">
   <a
     href="#"
     class="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline"
-    >2 star</a
+    >{{userCount[3].name}}</a
   >
   <div class="w-2/4 h-5 mx-4 bg-gray-200 rounded dark:bg-gray-700">
-    <div class="h-5 bg-blue-300 rounded" style="width: 4%"></div>
+    <div class="h-5 bg-blue-300 rounded" [style.width.%]="(userCount[3].Users.length * 100) / users.length"></div>
+
   </div>
-  <span class="text-sm font-medium text-gray-500 dark:text-gray-400">4%</span>
+  <span class="text-sm font-medium text-gray-500 dark:text-gray-400">{{getFormattedWidth(userCount[3].Users)}}%</span>
 </div>
 <div class="flex items-center mt-4">
   <a
     href="#"
     class="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline"
-    >course1</a
+    >{{userCount[4].name}}</a
   >
   <div class="w-2/4 h-5 mx-4 bg-gray-200 rounded dark:bg-gray-700">
-    <div class="h-5 bg-blue-300 rounded" style="width: 1%"></div>
+    <div class="h-5 bg-blue-300 rounded" [style.width.%]="(userCount[4].Users.length * 100) / users.length"></div>
+
   </div>
-  <span class="text font-medium text-gray-500 dark:text-gray-400">1%</span>
+  <span class="text font-medium text-gray-500 dark:text-gray-400">{{getFormattedWidth(userCount[4].Users)}}%</span>
 </div>
 </div>
