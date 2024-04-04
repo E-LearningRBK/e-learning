@@ -1,4 +1,10 @@
 .container {
+  gap: 30px;
+  margin-top: 20px;
+  padding: 20px 10vw 30px;
+}
+
+.courses-container {
   display: flex;
   flex-wrap: wrap;
   /* justify-content: center; */
@@ -6,7 +12,6 @@
   /* min-height: 100vh; */
   gap: 30px;
   margin-top: 20px;
-  padding: 20px 10vw 30px;
 }
 
 .box-mat {
