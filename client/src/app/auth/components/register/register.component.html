@@ -1,5 +1,5 @@
 <div class="flex justify-center items-center h-screen ">
-  <div class="max-w-md w-full my-10 md:mx-auto p-2 bg-white shadow-lg border border-solid border-gray-300 rounded-md">
+  <div class="max-w-lg w-[1500px] my-8 md:max-auto p-2 bg-white shadow-lg border border-solid border-gray-300 rounded-md">
     <h2 class="text-3xl font-bold mb-8 text-center text-gray-700">Sign Up</h2>
 
     <form (ngSubmit)="onSubmit()" class="space-y-6">
@@ -31,7 +31,7 @@
           required
           name="firstName"
           [(ngModel)]="form.firstName"
-          class="bg-indigo-50 border border-indigo-150 text-slate-50 text-sm rounded-lg focus:ring-green-50 focus:border-t-zinc-50 block w-full p-2.5"
+          class="bg-indigo-50 border border-indigo-150 text-slate-500 text-sm rounded-lg focus:ring-slate-500 focus:border-indigo- block w-full p-2.5"
         />
       </div>
 
@@ -46,7 +46,7 @@
           required
           name="lastName"
           [(ngModel)]="form.lastName"
-          class="bg-indigo-50 border border-indigo-150 text-slate-50 text-sm rounded-lg focus:ring-green-50 focus:border-t-zinc-50 block w-full p-2.5"
+          class="bg-indigo-50 border border-indigo-150 text-slate-500 text-sm rounded-lg focus:ring-slate-500 focus:border-indigo- block w-full p-2.5"
         />
       </div>
 
@@ -61,7 +61,7 @@
           name="email"
           required
           [(ngModel)]="form.email"
-          class="bg-indigo-50 border border-indigo-150 text-slate-50 text-sm rounded-lg focus:ring-green-50 focus:border-t-zinc-50 block w-full p-2.5"
+          class="bg-indigo-50 border border-indigo-150 text-slate-500 text-sm rounded-lg focus:ring-slate-500 focus:border-indigo- block w-full p-2.5"
         />
       </div>
 
@@ -77,7 +77,7 @@
           required
           [(ngModel)]="form.password"
           minlength="8"
-          class="bg-indigo-50 border border-indigo-150 text-slate-50 text-sm rounded-lg focus:ring-green-50 focus:border-t-zinc-50 block w-full p-2.5"
+          class="bg-indigo-50 border border-indigo-150 text-slate-500 text-sm rounded-lg focus:ring-slate-500 focus:border-indigo- block w-full p-2.5"
         />
         @if(form.password && !StrongPassword(form.password)){
         <div class="text-red-500 text-sm mt-1">
