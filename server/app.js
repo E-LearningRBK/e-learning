@@ -4,6 +4,7 @@ const multer = require("multer");
 const usersRouter = require("./routes/users");
 const materialRouter = require("./routes/material");
 const stud_materialRouter = require("./routes/stud_material");
+const payment = require("./routes/payment");
 
 var morgan = require("morgan");
 const app = express();
@@ -18,7 +19,7 @@ app.use(cors());
 app.use("/api/users", usersRouter);
 app.use("/api/material", materialRouter);
 app.use("/api/student", stud_materialRouter);
-
+app.use("/api/payment",payment)
 app.listen(port, () => {
   console.log(`app listening on port ${port}`);
 });
