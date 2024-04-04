@@ -25,64 +25,28 @@
   </div>
 </div>
 <div class="justify-center px20">
-  <h1 class="justify-center"> the most highly attended courses:</h1>
-<div class="flex center mt-4">
+  <h1 class="text-center mb-4  mt-4 font-large  "> the most highly attended courses:</h1>
 
-  <a
-    href="#"
-    class="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline"
-    >{{userCount[0].name}}</a
-  >
-  <div class="w-2/4 h-5 mx-4 bg-gray-200 rounded dark:bg-gray-700">
-    <div class="h-5 bg-blue-300 rounded" [style.width.%]="(userCount[0].Users.length * 100) / users.length"></div>
-  </div>
-  <span class="text-sm font-medium text-gray-500 dark:text-gray-400"> {{getFormattedWidth(userCount[0].Users)}} %</span>
-</div>
-<div class="flex items-center mt-4">
-  <a
-    href="#"
-    class="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline"
-    >{{userCount[1].name}}</a
-  >
-  <div class="w-2/4 h-5 mx-4 bg-gray-200 rounded dark:bg-gray-700">
-    <div class="h-5 bg-blue-300 rounded" [style.width.%]="(userCount[1].Users.length * 100) / users.length"></div>
-  </div>
-  <span class="text-sm font-medium text-gray-500 dark:text-gray-400">{{getFormattedWidth(userCount[1].Users)}}%</span>
-</div>
-<div class="flex items-center mt-4">
-  <a
-    href="#"
-    class="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline"
-    >{{userCount[2].name}}</a
-  >
-  <div class="w-2/4 h-5 mx-4 bg-gray-200 rounded dark:bg-gray-700">
-    <div class="h-5 bg-blue-300 rounded" [style.width.%]="(userCount[2].Users.length * 100) / users.length"></div>
+<table class="w-full min-w-full divide-y divide-gray-200">
+  <thead class="bg-gray-50">
+    <tr>
+      <th scope="col" class="max-w 100px px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Description</th>
+      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">%</th>
 
-  </div>
-  <span class="text-sm font-medium text-gray-500 dark:text-gray-400">{{getFormattedWidth(userCount[2].Users)}}%</span>
-</div>
-<div class="flex items-center mt-4">
-  <a
-    href="#"
-    class="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline"
-    >{{userCount[3].name}}</a
-  >
-  <div class="w-2/4 h-5 mx-4 bg-gray-200 rounded dark:bg-gray-700">
-    <div class="h-5 bg-blue-300 rounded" [style.width.%]="(userCount[3].Users.length * 100) / users.length"></div>
-
-  </div>
-  <span class="text-sm font-medium text-gray-500 dark:text-gray-400">{{getFormattedWidth(userCount[3].Users)}}%</span>
-</div>
-<div class="flex items-center mt-4">
-  <a
-    href="#"
-    class="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline"
-    >{{userCount[4].name}}</a
-  >
-  <div class="w-2/4 h-5 mx-4 bg-gray-200 rounded dark:bg-gray-700">
-    <div class="h-5 bg-blue-300 rounded" [style.width.%]="(userCount[4].Users.length * 100) / users.length"></div>
-
-  </div>
-  <span class="text font-medium text-gray-500 dark:text-gray-400">{{getFormattedWidth(userCount[4].Users)}}%</span>
-</div>
-</div>
+    </tr>
+  </thead>        
+  <tbody class="bg-white divide-y divide-gray-200">
+    @for(e of userCount ; track e.id){
+    <tr class="hover:bg-gray-100">
+      <td class="px-6 py-4 whitespace-nowrap" (click)="renavigate(e.id)">{{e.name}}</td>
+      <td class="px-6 py-4 whitespace-nowrap"><div class="w-2/4 h-5 mx-4 bg-gray-200 rounded dark:bg-gray-700">
+        <div class="h-5 bg-blue-300 rounded" [style.width.%]="(e.Users.length * 100) / users.length"></div>
+      </div>
+      
+    </td>
+      <td class="px-6 py-4 whitespace-nowrap"><span class="text-sm font-medium text-gray-500 dark:text-gray-400"> {{getFormattedWidth(e.Users)}} %</span></td>
+    </tr>
+    }
+  </tbody>
+</table>
