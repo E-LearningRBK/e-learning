@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../auth/Services/auth.service';
+import { UserDropdownComponent } from '../user-dropdown/user-dropdown.component';
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
-  imports: [],
+  imports: [UserDropdownComponent],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css',
 })

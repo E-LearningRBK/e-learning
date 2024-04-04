@@ -15,7 +15,7 @@
 }
 
 .nav-dropdown {
-  @apply mx-5 ml-auto;
+  @apply mr-8 ml-auto;
 }
 
 .nav-links {

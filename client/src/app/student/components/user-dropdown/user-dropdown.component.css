@@ -1,0 +1,25 @@
+.user-dropdown {
+  @apply relative z-[1];
+}
+
+.dropdown-image {
+  @apply rounded-full overflow-hidden shadow-sm border border-[#909090];
+}
+
+.dropdown-image img {
+  @apply object-cover w-[50px] object-center;
+}
+
+.drop-menu {
+  @apply absolute w-[200px] top-[100%] -right-5 scale-0;
+  @apply bg-[#fafafa] border-2 border-[#0c6e623b] rounded;
+}
+
+.drop-item {
+  @apply bg-[#fff] m-1 text-[18px] text-[#063731] p-2 border shadow-sm;
+  @apply hover:bg-[#FDF9EC];
+}
+
+.user-dropdown:hover .drop-menu {
+  @apply scale-100;
+}
