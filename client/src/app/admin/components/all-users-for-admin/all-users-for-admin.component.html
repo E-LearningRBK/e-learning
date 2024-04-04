@@ -1,3 +1,13 @@
+<div class="px-4 py-3 flex items-center justify-between border-b border-gray-200 sm:px-6 mb-4">
+  <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+    <div class="pagination flex items-center"> 
+      <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1" class="px-4 py-2 border rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-200 disabled:opacity-50 mr-2">Previous</button> <!-- Added mr-2 for some spacing -->
+      <span class="text-sm text-gray-700">{{ 'Page ' + currentPage }} / {{ totalPages }}</span>
+      <button (click)="onPageChange(currentPage + 1)" [disabled]="currentPage === totalPages" class="px-4 py-2 border rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-200 disabled:opacity-50 ml-2">Next</button> <!-- Added ml-2 for some spacing -->
+    </div>
+  </div>
+</div>
+
 <table class="min-w-full divide-y divide-gray-200">
   <thead class="bg-gray-50">
     <tr>
@@ -10,7 +20,7 @@
     </tr>
   </thead>
   <tbody class="bg-white divide-y divide-gray-200">
-    @for(e of users ; track e.id){
+    @for(e of getpagUser() ; track e.id){
     <tr class="hover:bg-gray-100">
       <td class="px-6 py-4 whitespace-nowrap">
         <img src="{{e.imageUrl}}" alt="User Image" class="h-10 w-10 rounded-full">
