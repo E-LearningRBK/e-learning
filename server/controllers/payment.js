@@ -1,10 +1,12 @@
 const axios = require("axios");
 require("dotenv").config();
+let idmat
 module.exports = {
   add: async (req, res) => {
 
     const url = "https://developers.flouci.com/api/generate_payment";
     let {price,id}=req.body
+    idmat=id
     price=price*1000
     const payload =  {
       "app_token": "bfb456ce-0022-43a8-a417-eff40313bab4",
@@ -18,11 +20,11 @@ module.exports = {
     }
     await axios
     .post(url, payload)
-    .then((result) => {
+    .then( async(result) => {
         res.send(result.data);
       })
       .catch((err) => {
         res.send(err);
       });
-  },
+  }
 };

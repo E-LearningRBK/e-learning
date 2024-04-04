@@ -10,12 +10,12 @@
   @apply border-2;
 }
 .search-result {
-  /* display:none; */
+  /* display:none;  */
   top: 90%;
   left: 10px;
   position: absolute;
   width: 300px;
-  /* margin: 20px auto 0 auto; */
+   /* margin: 20px auto 0 auto; */
   max-height: 300px;
   overflow-y: scroll;
   overscroll-behavior-y: contain;

@@ -89,9 +89,9 @@
   </div>
 
   <div class="courses-container">
-    @for (material of materials; track $index) {
+    @for (material of getpagMat(); track $index) {
     <div class="box-mat">
-      <div class="name">
+      <div class="name" (click)="materialDetaille(material)">
         {{ material.name }}
       </div>
 

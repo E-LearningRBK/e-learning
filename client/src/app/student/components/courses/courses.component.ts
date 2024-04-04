@@ -57,7 +57,6 @@ export class courses implements OnInit {
       const response = await this.materialService.paymentDirection(material).toPromise();
       if (response && response.result && response.result.link) {
          this.link = response.result.link;
-        
       } else {
         console.log(response);
         alert(' unable to access')
@@ -73,7 +72,8 @@ export class courses implements OnInit {
   toggleModal(material: any) {
     this.material = material;
     this.isModalOpen = !this.isModalOpen;
-    if (this.isModalOpen) this.paymentReDirection(material);}
+    if (this.isModalOpen) this.paymentReDirection(material);
+  }
   pageSize: number = 9;
   currentPage: number = 1;
   totalPages: number = 1;
