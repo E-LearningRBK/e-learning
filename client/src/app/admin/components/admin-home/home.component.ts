@@ -4,6 +4,7 @@ import { AdminUserServiceService } from '../../service/admin-user-service.servic
 import { users } from '../../model/users.model';
 import { AdminMaterialServiceService } from '../../service/admin-material-service.service';
 import { Material } from '../../model/courses.model';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,8 @@ export class homeComponent {
   materials: Material[] = [];
   constructor(
     private AdminUserServiceService: AdminUserServiceService,
-    private AdminMaterialServiceService: AdminMaterialServiceService
+    private AdminMaterialServiceService: AdminMaterialServiceService,
+    private router:Router
   ) {}
   users: users[] = [];
   userCount: any;
@@ -51,7 +53,9 @@ export class homeComponent {
   }
   getFormattedWidth(usersArray: any[]): string {
     const percentageWidth = (usersArray.length * 100) / this.users.length;
-    console.log(percentageWidth.toFixed(2));
     return percentageWidth.toFixed(2);
+  }
+    renavigate(id: number) {
+    this.router.navigate(['/course', id]);
   }
 }
