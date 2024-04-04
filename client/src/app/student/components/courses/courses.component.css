@@ -50,3 +50,8 @@
 .btn-action:hover {
   @apply text-[#fff] font-[600] bg-[#E2AE12] border-2 border-[#E2AE12];
 }
+
+.center-row {
+  display: flex;
+  justify-content: center;
+}
