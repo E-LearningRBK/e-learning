@@ -22,7 +22,12 @@ export const routes: Routes = [
   {
     path: '',
     component: IndexComponent,
-    children: [{ path: '', component: WelcomeComponent }],
+    children: [
+      { path: '', component: WelcomeComponent },
+      // Auth Routes
+      { path: 'login', component: LoginComponent },
+      { path: 'register', component: RegisterComponent },
+    ],
   },
   // User Routes
   {
@@ -42,9 +47,6 @@ export const routes: Routes = [
       { path: 'all-courses', component: courses },
     ],
   },
-  // Auth Routes
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
   // Admin Routes
   {
     path: 'admin',
