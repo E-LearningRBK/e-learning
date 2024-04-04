@@ -1,6 +1,3 @@
-.search-container {
-  @apply bg-[#f9f9f9] relative p-2 border border-[#0c6e629c] rounded shadow-sm;
-}
 .search-box {
   border-color: #adadad;
   border-radius: 5px;
