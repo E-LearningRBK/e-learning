@@ -1,7 +1,21 @@
 <div class='container'>
   <search-bar></search-bar>
+  <div class="center-row">
+    <div class="px-4 py-3 flex items-center justify-center border-b border-gray-200 sm:px-6 mb-4"> 
+      <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+        <div class="pagination flex items-center"> 
+          <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1" class="px-4 py-2 border rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-200 disabled:opacity-50 mr-2">Previous</button> 
+          <span class="text-sm text-gray-700">{{ 'Page ' + currentPage }} / {{ totalPages }}</span>
+          <button (click)="onPageChange(currentPage + 1)" [disabled]="currentPage === totalPages" class="px-4 py-2 border rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-200 disabled:opacity-50 ml-2">Next</button> 
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+
   <div class='courses-container'>
-    @for (material of materials; track $index) {
+    @for (material of getpagMat(); track $index) {
     <div (click)="materialDetaille(material)" class="box-mat">
       <div class="name">
         {{ material.name }}
