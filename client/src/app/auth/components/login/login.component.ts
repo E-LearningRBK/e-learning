@@ -21,6 +21,5 @@ export class LoginComponent {
   onSubmit(): void {
     const { email, password } = this.form;
     this.authService.login(email, password)
-    this.route.navigate(['/home'])
   }
 }

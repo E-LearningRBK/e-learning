@@ -29,7 +29,7 @@ export class AuthService {
             if (res.logeduser.role === 'admin') {
               this.router.navigate(['/admin']);
             } else {
-              this.router.navigate(['/home']);
+              this.router.navigate(['/my-courses']);
             }
           }
         },

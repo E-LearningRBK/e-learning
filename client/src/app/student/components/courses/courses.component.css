@@ -57,5 +57,5 @@
 }
 
 .tools-container {
-  @apply bg-[#f9f9f986] relative p-2 border flex items-center border-[#0c6e629c] rounded shadow-sm;
+  @apply bg-[#fcfcfc] relative shadow p-2 border flex items-center border-[#0c6e629c] rounded shadow-sm;
 }
