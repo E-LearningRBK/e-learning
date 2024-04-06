@@ -3,18 +3,20 @@ import { Material } from '../../model/courses.model';
 import { AdminMaterialServiceService } from '../../service/admin-material-service.service';
 import { Router } from '@angular/router';
 import { CreateCourseComponent } from '../create-course/create-course.component';
-import { AdminPaginationForCoursesComponent } from '../admin-pagination-for-courses/admin-pagination.component';
+
 
 @Component({
   selector: 'app-all-courses-for-admin',
   standalone: true,
-  imports: [CreateCourseComponent,AdminPaginationForCoursesComponent],
+  imports: [CreateCourseComponent],
   templateUrl: './all-courses-for-admin.component.html',
   styleUrl: './all-courses-for-admin.component.css'
 })
 export class AllCoursesForAdminComponent implements OnInit {
   materials: Material[] = [];
-  
+  pageSize: number = 10;
+  currentPage: number = 1;
+  totalPages: number = 1;
 
   constructor(
     private AdminMaterialServiceService: AdminMaterialServiceService,
@@ -28,7 +30,7 @@ export class AllCoursesForAdminComponent implements OnInit {
   fetchMaterials(): void {
     this.AdminMaterialServiceService.getAllMaterials().subscribe((materials) => {
       this.materials = materials;
-      
+      this.totalPages = Math.ceil(this.materials.length / this.pageSize);
     });
   }
 
@@ -44,6 +46,16 @@ export class AllCoursesForAdminComponent implements OnInit {
 
 })
   }
+  onPageChange(page: number): void {
+    this.currentPage = page;
+  }
+
+  getPagMat(): Material[] {
+    const startIndex = (this.currentPage - 1) * this.pageSize;
+    const endIndex = startIndex + this.pageSize;
+    return this.materials.slice(startIndex, endIndex);
+  }
+
 }
   
 
