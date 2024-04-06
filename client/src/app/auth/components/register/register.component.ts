@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../Services/auth.service';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -19,7 +20,7 @@ export class RegisterComponent {
   };
   image: string =
     'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png';
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService , private navigate : Router) {}
   onFileSelected(e: any) {
     const file: File = e.target.files[0];
     this.form.imageUrl = file;
@@ -39,6 +40,7 @@ export class RegisterComponent {
     this.authService.singup(formData).subscribe({
       next: (data) => {
         console.log(data);
+        this.navigate.navigate(['/login'])
       },
       error: (err) => {
         console.log(err);
