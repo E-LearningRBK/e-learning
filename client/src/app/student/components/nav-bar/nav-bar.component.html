@@ -5,12 +5,13 @@
   </div>
 
   <div class="nav-links">
-    <div>
-      <a class="nav-item navlink" href="/home">
-        Home
-      </a>
-    </div>
+    
     @if (isAuthenticated) {
+      <div>
+        <a class="nav-item navlink" href="/home">
+          Home
+        </a>
+      </div>
     <div>
       <a class="nav-item navlink" href="/all-courses">Courses</a>
     </div>
