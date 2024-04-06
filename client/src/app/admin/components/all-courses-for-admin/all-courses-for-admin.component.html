@@ -1,4 +1,7 @@
 <create-course></create-course>
+<div  class="mx-auto w-[80vw] border-2 border-[#cfcfcf] mt-4 rounded-sm" >
+
+
 <div class="px-4 py-3 flex items-center justify-between border-b border-gray-200 sm:px-6 mb-4">
   <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
     <div class="pagination flex items-center"> 
@@ -8,28 +11,31 @@
     </div>
   </div>
 </div>
-<div class="overflow-x-auto">
-  <table class="w-full min-w-full divide-y divide-gray-200">
+
+
+
+<div class="overflow-y-scroll h-[600px]">
+  <table class="divide-y w-full divide-gray-200">
     <thead class="bg-gray-50">
       <tr>
-        <th scope="col" class="px-1 py-5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-        <th scope="col" class="px-1 py-5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Description</th>
-        <th scope="col" class="px-1 py-5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Price</th>
-        <th scope="col" class="px-1 py-5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
-        <th scope="col" class="px-1 py-5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Link</th>
-        <th scope="col" class="px-1 py-5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">update/delete
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Description</th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Price</th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Link</th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">update/delete
         </th>
       </tr>
     </thead>
     <tbody class="bg-white divide-y divide-gray-200">
       @for(e of getPagMat(); track e.id) {
         <tr class="hover:bg-gray-100">
-          <td class="px-1 py-3 whitespace-nowrap">{{e.name}}</td>
-          <td class="px-1 py-3 whitespace-nowrap">{{e.description}}</td>
-          <td class="px-1 py-3 whitespace-nowrap">{{e.price}}</td>
-          <td class="px-1 py-3 whitespace-nowrap">{{e.date}}</td>
-          <td class="px-1 py-3 whitespace-nowrap"><a href="{{e.link}}" class="text-indigo-600 hover:text-indigo-900">{{e.link}}</a></td>
-          <td class="px-1 py-3 whitespace-nowrap">
+          <td class="px-6 py-4 whitespace-nowrap">{{e.name}}</td>
+          <td class="px-6 py-4 whitespace-nowrap">{{e.description}}</td>
+          <td class="px-6 py-4 whitespace-nowrap">{{e.price}}</td>
+          <td class="px-6 py-4 whitespace-nowrap">{{e.date}}</td>
+          <td class="px-6 py-4 whitespace-nowrap"><a href="{{e.link}}" class="text-indigo-600 hover:text-indigo-900">{{e.link}}</a></td>
+          <td class="px-6 py-4 whitespace-nowrap">
             <button (click)="navigateToCourses(e)" class="text-indigo-600 hover:text-indigo-900">♻ . </button>
             <button (click)="delCourse(e.id)" class="text-indigo-600 hover:text-indigo-900">or 🗑️ </button>
           </td>
@@ -37,4 +43,5 @@
       }
     </tbody>
   </table>
+</div>
 </div>
