@@ -37,7 +37,7 @@ const signup = async (req, res) => {
       lastName: lastName,
       email: email,
       password: hashedpass,
-      role: "student",
+      role: "user",
       isactive: "false",
       activationcode: randomString,
     });
@@ -120,6 +120,7 @@ const getOne = async (req, res) => {
     const user = await User.findByPk(id, {
       include: Material,
     });
+    console.log(user)
 
     res.status(200).send(user);
   } catch (err) {

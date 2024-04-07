@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrl: './drop-admin.component.css'
 })
 export class DropAdminComponent {
-  heroImageUrl: string = "../../../../assets/logo.png";
+ 
 
   constructor(private router: Router) {}
 

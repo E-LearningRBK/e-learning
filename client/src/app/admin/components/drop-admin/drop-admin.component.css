@@ -1,0 +1,11 @@
+.nav-header {
+    @apply text-[30px] text-[#109384] font-[600];
+    @apply ml-6 mr-10;
+    @apply flex gap-3 items-center;
+    @apply hover:scale-[1.05] duration-200;
+    @apply active:scale-[0.95] duration-100;
+  }
+  
+  .nav-item {
+    @apply cursor-pointer;
+  }
